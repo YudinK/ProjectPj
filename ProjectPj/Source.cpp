@@ -13,6 +13,4 @@ int main()
 	
 	BaseTest bt;
 	bt.menu();
-
-
 }
