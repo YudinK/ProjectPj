@@ -180,10 +180,8 @@ public:
 		}
 		system("pause");
 	}
-
 	friend ostream& operator<<(ostream& out, const Quest& q);
 };
-
 
 class QuestionYesNo : public Quest
 {
@@ -209,7 +207,6 @@ public:
 
 class QuestionOneOfMany : public Quest
 {
-
 public:
 	void newQues()
 	{

@@ -2,7 +2,6 @@
 #include"User.h"
 #include"Test.h"
 
-
 class BaseTest
 {
 	map<string, Student> stud;
@@ -73,7 +72,6 @@ public:
 				system("pause");
 			}
 		}
-
 	}
 	void vhod(string log)
 	{
@@ -389,7 +387,6 @@ public:
 			cout << "Данный тест не найден в списке активных тестов, возможно он удален. Обратитесь к администратору" << endl;
 			system("pause");
 		}
-
 	}
 
 	void getStat()
