@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include<string>
 #include<map>
 #include<iterator>
@@ -69,7 +69,7 @@ char getValue02()
 	return v;
 }
 
-class Question
+class Quest
 {
 protected:
 	string Ques;
@@ -77,8 +77,8 @@ protected:
 	int numAnswer;
 	int Bal;
 public:
-	Question() {};
-	Question(string ques, int numAnswer, int bal)
+	Quest() {};
+	Quest(string ques, int numAnswer, int bal)
 	{
 		Ques = ques;
 		numAnswer = numAnswer;
@@ -90,10 +90,10 @@ public:
 	{
 		out << Ques << endl;
 		int nom = 1;
-		out << "  Варианты ответа:" << endl;
+		out << "  Р’Р°СЂРёР°РЅС‚С‹ РѕС‚РІРµС‚Р°:" << endl;
 		for (auto& x : Answer)
 			out << nom++ << ". " << x << endl;
-		out << "Номер правильного ответа: " << numAnswer << " Бал за правильный ответ: " << Bal << endl; SetColor(13, 0);
+		out << "РќРѕРјРµСЂ РїСЂР°РІРёР»СЊРЅРѕРіРѕ РѕС‚РІРµС‚Р°: " << numAnswer << " Р‘Р°Р» Р·Р° РїСЂР°РІРёР»СЊРЅС‹Р№ РѕС‚РІРµС‚: " << Bal << endl; SetColor(13, 0);
 		out << "------------------------------------------------------------------" << endl; SetColor(11, 0);
 	}
 
@@ -101,11 +101,11 @@ public:
 	{
 		cout << Ques << endl;
 		int n = 1;
-		cout << "  Варианты ответа:" << endl;
+		cout << "  Р’Р°СЂРёР°РЅС‚С‹ РѕС‚РІРµС‚Р°:" << endl;
 		for (auto& x : Answer)
 			cout << n++ << ". " << x << endl; SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "Выберите номер ответа: " << endl;
+		cout << "Р’С‹Р±РµСЂРёС‚Рµ РЅРѕРјРµСЂ РѕС‚РІРµС‚Р°: " << endl;
 	}
 
 	int getBal() { return Bal; }
@@ -116,106 +116,106 @@ public:
 	{
 		print(cout);
 		SetColor(11, 0);
-		cout << "Изменить вопрос?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "да, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "нет" << endl;
+		cout << "РР·РјРµРЅРёС‚СЊ РІРѕРїСЂРѕСЃ?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "РґР°, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "РЅРµС‚" << endl;
 		char vibor = getValue02();
 		if (vibor == '1')
 		{
-			cout << "Введите вопрос: ";
+			cout << "Р’РІРµРґРёС‚Рµ РІРѕРїСЂРѕСЃ: ";
 			getline(cin, Ques);
-			cout << "Вопрос изменен!" << endl;
+			cout << "Р’РѕРїСЂРѕСЃ РёР·РјРµРЅРµРЅ!" << endl;
 		}
 		SetColor(11, 0);
-		cout << "Изменить ответы ?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "да, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "нет" << endl;
+		cout << "РР·РјРµРЅРёС‚СЊ РѕС‚РІРµС‚С‹ ?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "РґР°, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "РЅРµС‚" << endl;
 		vibor = getValue02();
 		while (vibor == '1')
 		{
-			cout << "Введите номер ответа, который хотите изменить" << endl;
+			cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РѕС‚РІРµС‚Р°, РєРѕС‚РѕСЂС‹Р№ С…РѕС‚РёС‚Рµ РёР·РјРµРЅРёС‚СЊ" << endl;
 			int nom = getValue() - 48;
 			while (nom <= 0 || nom > Answer.size())
 			{
-				cout << "Ошибка! Номер ответа должен быть от 1 до " << Answer.size() << endl;
+				cout << "РћС€РёР±РєР°! РќРѕРјРµСЂ РѕС‚РІРµС‚Р° РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РѕС‚ 1 РґРѕ " << Answer.size() << endl;
 				nom = getValue() - 48;
 			}
-			cout << "Введите новый ответ: ";
+			cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІС‹Р№ РѕС‚РІРµС‚: ";
 			string ans;
 			getline(cin, ans);
 			auto it = Answer.begin();
 			advance(it, nom - 1);
 			Answer.erase(it);
 			Answer.insert(it, ans);
-			cout << "Ответ изменен!" << endl;
-			cout << "Изменить еще один ответ?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "да, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "нет" << endl;
+			cout << "РћС‚РІРµС‚ РёР·РјРµРЅРµРЅ!" << endl;
+			cout << "РР·РјРµРЅРёС‚СЊ РµС‰Рµ РѕРґРёРЅ РѕС‚РІРµС‚?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "РґР°, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "РЅРµС‚" << endl;
 			vibor = getValue02();
 		}
 		do {
-			cout << "Добавить еще один ответ?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "да, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "нет" << endl;
+			cout << "Р”РѕР±Р°РІРёС‚СЊ РµС‰Рµ РѕРґРёРЅ РѕС‚РІРµС‚?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "РґР°, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "РЅРµС‚" << endl;
 			vibor = getValue02();
 			if (vibor == '1')
 			{
-				cout << "Введите ответ: ";
+				cout << "Р’РІРµРґРёС‚Рµ РѕС‚РІРµС‚: ";
 				string ans;
 				getline(cin, ans);
 				Answer.push_back(ans);
-				cout << "Ответ добавлен!" << endl;
+				cout << "РћС‚РІРµС‚ РґРѕР±Р°РІР»РµРЅ!" << endl;
 			}
 		} while (vibor == 1);
-		cout << "Номер правильного ответа: " << numAnswer << " Изменить?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "да, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "нет" << endl;
+		cout << "РќРѕРјРµСЂ РїСЂР°РІРёР»СЊРЅРѕРіРѕ РѕС‚РІРµС‚Р°: " << numAnswer << " РР·РјРµРЅРёС‚СЊ?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "РґР°, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "РЅРµС‚" << endl;
 		vibor = getValue02();
 		if (vibor == '1')
 		{
-			cout << "Введите номер правильного ответа: ";
+			cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РїСЂР°РІРёР»СЊРЅРѕРіРѕ РѕС‚РІРµС‚Р°: ";
 			cin >> numAnswer;
-			cout << "Номер правильного ответа изменен!" << endl;
+			cout << "РќРѕРјРµСЂ РїСЂР°РІРёР»СЊРЅРѕРіРѕ РѕС‚РІРµС‚Р° РёР·РјРµРЅРµРЅ!" << endl;
 		}
-		cout << "Балл за правильный ответ: " << Bal << " Изменить?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "да, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "нет" << endl;
+		cout << "Р‘Р°Р»Р» Р·Р° РїСЂР°РІРёР»СЊРЅС‹Р№ РѕС‚РІРµС‚: " << Bal << " РР·РјРµРЅРёС‚СЊ?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "РґР°, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "РЅРµС‚" << endl;
 		vibor = getValue02();
 		d = 0;
 		if (vibor == '1')
 		{
 			d = Bal;
-			cout << "Введите балл: ";
+			cout << "Р’РІРµРґРёС‚Рµ Р±Р°Р»Р»: ";
 			cin >> Bal;
 			d = Bal - d;
-			cout << "Балл изменен!" << endl;
+			cout << "Р‘Р°Р»Р» РёР·РјРµРЅРµРЅ!" << endl;
 		}
 		system("pause");
 	}
 
-	friend ostream& operator<<(ostream& out, const Question& q);
+	friend ostream& operator<<(ostream& out, const Quest& q);
 };
 
 
-class QuestionYesNo : public Question
+class QuestionYesNo : public Quest
 {
 
 public:
 	QuestionYesNo()
 	{
-		Answer.push_back("Верно");
-		Answer.push_back("Неверно");
+		Answer.push_back("Р’РµСЂРЅРѕ");
+		Answer.push_back("РќРµРІРµСЂРЅРѕ");
 	}
 	void newQues()
 	{
-		cout << "Вопрос: " << endl;
+		cout << "Р’РѕРїСЂРѕСЃ: " << endl;
 		getline(cin, Ques);
-		cout << "Варианты ответа:"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "верно "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "неверно" << endl;
-		cout << "Введите номер правильного ответа: " << endl;
+		cout << "Р’Р°СЂРёР°РЅС‚С‹ РѕС‚РІРµС‚Р°:"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "РІРµСЂРЅРѕ "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "РЅРµРІРµСЂРЅРѕ" << endl;
+		cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РїСЂР°РІРёР»СЊРЅРѕРіРѕ РѕС‚РІРµС‚Р°: " << endl;
 		numAnswer = getValue02() - 48;
-		cout << "Количество баллов за правильный ответ: ";
+		cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ Р±Р°Р»Р»РѕРІ Р·Р° РїСЂР°РІРёР»СЊРЅС‹Р№ РѕС‚РІРµС‚: ";
 		cin >> Bal;
 		cin.ignore();
 	}
 };
 
-class QuestionOneOfMany : public Question
+class QuestionOneOfMany : public Quest
 {
 
 public:
 	void newQues()
 	{
-		cout << "Вопрос: " << endl;
+		cout << "Р’РѕРїСЂРѕСЃ: " << endl;
 		getline(cin, this->Ques);
-		cout << "Варианты ответа: " << endl;
+		cout << "Р’Р°СЂРёР°РЅС‚С‹ РѕС‚РІРµС‚Р°: " << endl;
 		string ans;
 		char c = 0, vibor = '1';
 		int nom = 1;
@@ -223,17 +223,17 @@ public:
 			cout << nom++ << ". ";
 			getline(cin, ans);
 			Answer.push_back(ans);
-			cout << "Добавить еще вариант ответа:"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "да, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "нет" << endl;
+			cout << "Р”РѕР±Р°РІРёС‚СЊ РµС‰Рµ РІР°СЂРёР°РЅС‚ РѕС‚РІРµС‚Р°:"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "РґР°, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "РЅРµС‚" << endl;
 			vibor = getValue02();
 		} while (vibor == '1');
-		cout << "Введите номер правильного ответа: " << endl;
+		cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РїСЂР°РІРёР»СЊРЅРѕРіРѕ РѕС‚РІРµС‚Р°: " << endl;
 		numAnswer = getValue() - 48;
 		while (numAnswer <= 0 || numAnswer >= nom)
 		{
-			cout << "Ошибка! Номер правильного ответа должен быть от 1 до " << nom - 1 << endl;
+			cout << "РћС€РёР±РєР°! РќРѕРјРµСЂ РїСЂР°РІРёР»СЊРЅРѕРіРѕ РѕС‚РІРµС‚Р° РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РѕС‚ 1 РґРѕ " << nom - 1 << endl;
 			numAnswer = getValue() - 48;
 		}
-		cout << "Количество баллов за правильный ответ: ";
+		cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ Р±Р°Р»Р»РѕРІ Р·Р° РїСЂР°РІРёР»СЊРЅС‹Р№ РѕС‚РІРµС‚: ";
 		cin >> Bal;
 		cin.ignore();
 	}
@@ -244,7 +244,7 @@ class Test
 	string Name;
 	string Category;
 	bool Active = 0;
-	list<Question> questions;
+	list<Quest> questions;
 	int Bal = 0;
 	bool unFinished = 0;
 
@@ -265,7 +265,7 @@ public:
 		this->Active = obj.Active;
 		this->Bal = obj.Bal;
 		this->unFinished = obj.unFinished;
-		list<Question> q = obj.questions;
+		list<Quest> q = obj.questions;
 		this->questions = q;
 	}
 
@@ -276,7 +276,7 @@ public:
 		this->Active = obj.Active;
 		this->Bal = obj.Bal;
 		this->unFinished = obj.unFinished;
-		list<Question> q = obj.questions;
+		list<Quest> q = obj.questions;
 		this->questions = q;
 		return *this;
 	}
@@ -292,55 +292,21 @@ public:
 	void changeActive()
 	{
 		if (Active)
-			cout << "Тест активен";
-		else cout << "Тест неактивен";
-		cout << "  Изменить ?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "да, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "нет" << endl;
+			cout << "РўРµСЃС‚ Р°РєС‚РёРІРµРЅ";
+		else cout << "РўРµСЃС‚ РЅРµР°РєС‚РёРІРµРЅ";
+		cout << "  РР·РјРµРЅРёС‚СЊ ?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "РґР°, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "РЅРµС‚" << endl;
 		char vibor = getValue02();
 		if (vibor == '1')
 			Active = !Active;
 	}
 	void setCategory(string cat) { Category = cat; }
-	void setQuestions(list<Question> q) { questions = q; }
-
-	void edit()
-	{
-		do
-		{
-			system("cls");
-			SetColor(13, 0);
-			cout << "------------------------------------------------" << endl; SetColor(11, 0);
-			cout << "              Редактирование теста              " << endl; SetColor(13, 0);
-			cout << "------------------------------------------------" << endl;
-			cout << "1: "; SetColor(11, 0); cout << "добавить вопрос " << endl; SetColor(13, 0);
-			cout << "2: "; SetColor(11, 0); cout << "удалить вопрос " << endl; SetColor(13, 0);
-			cout << "3: "; SetColor(11, 0); cout << "редактировать вопрос " << endl; SetColor(13, 0);
-			cout << "4: "; SetColor(11, 0); cout << "изменить название теста" << endl; SetColor(13, 0);
-			cout << "5: "; SetColor(11, 0); cout << "изменить активность теста" << endl; SetColor(13, 0);
-			cout << "0: "; SetColor(11, 0); cout << "выход" << endl;
-			char vibor = getValue();
-			switch (vibor)
-			{
-			case '1': addQuest(); break;
-			case '2': delQuest(); break;
-			case '3': editQuest(); break;
-			case '4':
-				cout << "Название теста: " << Name << endl;
-				cout << "Введите новое название: ";
-				getline(cin, Name);
-				cout << "Название теста изменено" << endl;
-				break;
-			case '5': changeActive(); break;
-			case '0': return;
-			default: break;
-			}
-		} while (true);
-	}
+	void setQuestions(list<Quest> q) { questions = q; }
 
 	void addQuest()
 	{
 		char vibor = '1';
 		do {
-			cout << "Выберите тип:"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "верно | неверно "; SetColor(13, 0); cout << "2 : "; SetColor(11, 0); cout << "один из нескольких" << endl;
+			cout << "Р’С‹Р±РµСЂРёС‚Рµ С‚РёРї:"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "РІРµСЂРЅРѕ | РЅРµРІРµСЂРЅРѕ "; SetColor(13, 0); cout << "2 : "; SetColor(11, 0); cout << "РѕРґРёРЅ РёР· РЅРµСЃРєРѕР»СЊРєРёС…" << endl;
 			char type = getValue02();
 			if (type == '1')
 			{
@@ -356,7 +322,7 @@ public:
 				questions.push_back(q);
 				Bal += q.getBal();
 			}
-			cout << "Добавить еще вопрос?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "да, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "нет" << endl;
+			cout << "Р”РѕР±Р°РІРёС‚СЊ РµС‰Рµ РІРѕРїСЂРѕСЃ?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "РґР°, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "РЅРµС‚" << endl;
 			vibor = getValue02();
 		} while (vibor == '1');
 	}
@@ -366,19 +332,19 @@ public:
 		int nom = 1;
 		for (auto& x : questions)
 		{
-			cout << "Вопрос №" << nom++ << ".  ";
+			cout << "Р’РѕРїСЂРѕСЃ в„–" << nom++ << ".  ";
 			x.print(cout);
 		}
-		cout << "Введите номер вопроса для удаления: " << endl;
+		cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РІРѕРїСЂРѕСЃР° РґР»СЏ СѓРґР°Р»РµРЅРёСЏ: " << endl;
 		int nomQ = getValue() - 48;
 		if (nomQ > 0 && nomQ < nom)
 		{
 			auto it = questions.begin();
 			advance(it, nomQ - 1);
 			questions.erase(it);
-			cout << "Вопрос удален из теста!" << endl;
+			cout << "Р’РѕРїСЂРѕСЃ СѓРґР°Р»РµРЅ РёР· С‚РµСЃС‚Р°!" << endl;
 		}
-		else cout << "Неверный номер" << endl;
+		else cout << "РќРµРІРµСЂРЅС‹Р№ РЅРѕРјРµСЂ" << endl;
 		system("pause");
 	}
 
@@ -387,10 +353,10 @@ public:
 		int nom = 1;
 		for (auto& x : questions)
 		{
-			cout << "Вопрос №" << nom++ << ".  ";
+			cout << "Р’РѕРїСЂРѕСЃ в„–" << nom++ << ".  ";
 			x.print(cout);
 		}
-		cout << "Введите номер вопроса для редактирования: " << endl;
+		cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РІРѕРїСЂРѕСЃР° РґР»СЏ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ: " << endl;
 		int nomQ = getValue() - 48;
 		if (nomQ > 0 && nomQ < nom)
 		{
@@ -399,9 +365,9 @@ public:
 			int d;
 			it->edit(d);
 			Bal += d;
-			cout << "Вопрос изменен!" << endl;
+			cout << "Р’РѕРїСЂРѕСЃ РёР·РјРµРЅРµРЅ!" << endl;
 		}
-		else cout << "Неверный номер" << endl;
+		else cout << "РќРµРІРµСЂРЅС‹Р№ РЅРѕРјРµСЂ" << endl;
 		system("pause");
 	}
 	void print(ostream& out)
@@ -414,17 +380,17 @@ public:
 		else vir = 79;
 		out << setw(vir) << Name << endl;
 		if (!Active)
-			cout << "(Тест не активен)" << endl; SetColor(13, 0);
+			cout << "(РўРµСЃС‚ РЅРµ Р°РєС‚РёРІРµРЅ)" << endl; SetColor(13, 0);
 		out << "------------------------------------------------" << endl; SetColor(11, 0);
-		out << "Категория: " << Category << endl;
-		out << "Количесто вопросов в тесте: " << questions.size() << endl;
-		out << "Максимальное количество баллов: " << Bal << endl;
-		out << "Максимальная оценка:  12" << endl; SetColor(13, 0);
+		out << "РљР°С‚РµРіРѕСЂРёСЏ: " << Category << endl;
+		out << "РљРѕР»РёС‡РµСЃС‚Рѕ РІРѕРїСЂРѕСЃРѕРІ РІ С‚РµСЃС‚Рµ: " << questions.size() << endl;
+		out << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ Р±Р°Р»Р»РѕРІ: " << Bal << endl;
+		out << "РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ РѕС†РµРЅРєР°:  12" << endl; SetColor(13, 0);
 		out << "------------------------------------------------" << endl; SetColor(11, 0);
 		int nm = 1;
 		for (auto& x : questions)
 		{
-			out << "Вопрос №" << nm++ << ":   ";
+			out << "Р’РѕРїСЂРѕСЃ в„–" << nm++ << ":   ";
 			x.print(out);
 		}
 	}
@@ -442,19 +408,19 @@ public:
 	}
 	void create()
 	{
-		cout << "Введите название теста: ";
+		cout << "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ С‚РµСЃС‚Р°: ";
 		getline(cin, this->Name);
 		this->Active = true;
 		int b = 0;
-		list < Question> quest;
+		list < Quest> quest;
 		char vibor = 1;
 		do {
 			SetColor(13, 0);
-			cout << "1: "; SetColor(11, 0); cout << "добавить новый вопрос к тесту, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "завершить создание теста" << endl;
+			cout << "1: "; SetColor(11, 0); cout << "РґРѕР±Р°РІРёС‚СЊ РЅРѕРІС‹Р№ РІРѕРїСЂРѕСЃ Рє С‚РµСЃС‚Сѓ, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "Р·Р°РІРµСЂС€РёС‚СЊ СЃРѕР·РґР°РЅРёРµ С‚РµСЃС‚Р°" << endl;
 			vibor = getValue02();
 			if (vibor == '1')
 			{
-				cout << "Выберите тип: "; SetColor(13, 0); cout << "1: ";  SetColor(11, 0); cout << "верно / неверно"; SetColor(13, 0); cout << " 2: "; SetColor(11, 0); cout << "один из нескольких" << endl;
+				cout << "Р’С‹Р±РµСЂРёС‚Рµ С‚РёРї: "; SetColor(13, 0); cout << "1: ";  SetColor(11, 0); cout << "РІРµСЂРЅРѕ / РЅРµРІРµСЂРЅРѕ"; SetColor(13, 0); cout << " 2: "; SetColor(11, 0); cout << "РѕРґРёРЅ РёР· РЅРµСЃРєРѕР»СЊРєРёС…" << endl;
 				char type = getValue02();
 				if (type == '1')
 				{
@@ -482,9 +448,9 @@ public:
 		system("cls");
 		SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "Тест: " << Name << " из категории: " << Category << endl;
-		cout << "Тест содержит " << questions.size() << " вопросов, максимальный бал: " << Bal << endl;
-		cout << "Вы можете в любой момент прервать тестирование и продолжить " << endl; SetColor(13, 0);
+		cout << "РўРµСЃС‚: " << Name << " РёР· РєР°С‚РµРіРѕСЂРёРё: " << Category << endl;
+		cout << "РўРµСЃС‚ СЃРѕРґРµСЂР¶РёС‚ " << questions.size() << " РІРѕРїСЂРѕСЃРѕРІ, РјР°РєСЃРёРјР°Р»СЊРЅС‹Р№ Р±Р°Р»: " << Bal << endl;
+		cout << "Р’С‹ РјРѕР¶РµС‚Рµ РІ Р»СЋР±РѕР№ РјРѕРјРµРЅС‚ РїСЂРµСЂРІР°С‚СЊ С‚РµСЃС‚РёСЂРѕРІР°РЅРёРµ Рё РїСЂРѕРґРѕР»Р¶РёС‚СЊ " << endl; SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
 		int nom = 1;
 		b = 0;
@@ -494,9 +460,9 @@ public:
 		{
 			system("cls");
 			cout << endl;
-			cout << "Тест: " << Name << " из категории: " << Category << endl; SetColor(13, 0);
+			cout << "РўРµСЃС‚: " << Name << " РёР· РєР°С‚РµРіРѕСЂРёРё: " << Category << endl; SetColor(13, 0);
 			cout << "------------------------------------------------" << endl; SetColor(11, 0);
-			cout << " Вопрос №" << nom++ << ". ";
+			cout << " Р’РѕРїСЂРѕСЃ в„–" << nom++ << ". ";
 			x.printGo();
 			int nomAns = getValue() - 48;
 			if (nomAns == x.getNomPravAnswer())
@@ -508,7 +474,7 @@ public:
 			if (nom - 1 < questions.size())
 			{
 				SetColor(11, 0);
-				cout << "Продолжить? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "да"; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "прервать тестирование" << endl;
+				cout << "РџСЂРѕРґРѕР»Р¶РёС‚СЊ? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "РґР°"; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "РїСЂРµСЂРІР°С‚СЊ С‚РµСЃС‚РёСЂРѕРІР°РЅРёРµ" << endl;
 				char vibor = getValue02();
 				if (vibor == '2') 	break;
 			}
@@ -519,9 +485,9 @@ public:
 		system("cls");
 		SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "Тест: " << Name << " из категории: " << Category << endl;
-		cout << "Тест содержит всего " << questions.size() << " вопросов, максимальный бал: " << Bal << endl;
-		cout << "Вы ответили на " << kolQFin1 << " вопросов, из них " << kolPrav1 << " правильных ответов и набрали " << b1 << " баллов" << endl; SetColor(13, 0);
+		cout << "РўРµСЃС‚: " << Name << " РёР· РєР°С‚РµРіРѕСЂРёРё: " << Category << endl;
+		cout << "РўРµСЃС‚ СЃРѕРґРµСЂР¶РёС‚ РІСЃРµРіРѕ " << questions.size() << " РІРѕРїСЂРѕСЃРѕРІ, РјР°РєСЃРёРјР°Р»СЊРЅС‹Р№ Р±Р°Р»: " << Bal << endl;
+		cout << "Р’С‹ РѕС‚РІРµС‚РёР»Рё РЅР° " << kolQFin1 << " РІРѕРїСЂРѕСЃРѕРІ, РёР· РЅРёС… " << kolPrav1 << " РїСЂР°РІРёР»СЊРЅС‹С… РѕС‚РІРµС‚РѕРІ Рё РЅР°Р±СЂР°Р»Рё " << b1 << " Р±Р°Р»Р»РѕРІ" << endl; SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
 		int nom = 1;
 		b2 = b1;
@@ -533,9 +499,9 @@ public:
 			{
 				system("cls");
 				cout << endl;
-				cout << "Тест: " << Name << " из категории: " << Category << endl; SetColor(13, 0);
+				cout << "РўРµСЃС‚: " << Name << " РёР· РєР°С‚РµРіРѕСЂРёРё: " << Category << endl; SetColor(13, 0);
 				cout << "------------------------------------------------" << endl; SetColor(11, 0);
-				cout << " Вопрос №" << nom++ << ". ";
+				cout << " Р’РѕРїСЂРѕСЃ в„–" << nom++ << ". ";
 				x.printGo();
 				int nomAns = getValue() - 48;
 				if (nomAns == x.getNomPravAnswer())
@@ -546,7 +512,7 @@ public:
 				kolQFin2++;
 				if (nom - 1 < questions.size())
 				{
-					cout << "Продолжить?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "да, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "нет" << endl;
+					cout << "РџСЂРѕРґРѕР»Р¶РёС‚СЊ?"; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "РґР°, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << "РЅРµС‚" << endl;
 					char vibor = getValue02();
 					if (vibor == '2')
 						break;
@@ -567,12 +533,12 @@ public:
 		cout << endl;
 		SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "             Создание нового теста              " << endl; SetColor(13, 0);
+		cout << "             РЎРѕР·РґР°РЅРёРµ РЅРѕРІРѕРіРѕ С‚РµСЃС‚Р°              " << endl; SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
 		Test t;
 		if (!allTest.size())
 		{
-			cout << "Введите название категории теста:";
+			cout << "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РєР°С‚РµРіРѕСЂРёРё С‚РµСЃС‚Р°:";
 			string cat;
 			cin.ignore();
 			getline(cin, cat);
@@ -590,97 +556,63 @@ public:
 		system("cls");
 		SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "                   Удаление теста               " << endl; SetColor(13, 0);
+		cout << "                   РЈРґР°Р»РµРЅРёРµ С‚РµСЃС‚Р°               " << endl; SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
 		printCategoryNameT(cout);
-		cout << "Выберите категорию" << endl;
+		cout << "Р’С‹Р±РµСЂРёС‚Рµ РєР°С‚РµРіРѕСЂРёСЋ" << endl;
 		int nomCat = getValue() - 48;
 		if (nomCat > 0 && nomCat <= allTest.size())
 		{
 			auto it = allTest.begin();
 			advance(it, nomCat - 1);
 			string nameCat = it->first;
-			cout << "Категория: " << nameCat << " содержит тесты:" << endl;
+			cout << "РљР°С‚РµРіРѕСЂРёСЏ: " << nameCat << " СЃРѕРґРµСЂР¶РёС‚ С‚РµСЃС‚С‹:" << endl;
 			int nom = 1;
 			for (auto& x : allTest[nameCat])
 				cout << nom++ << ". " << x.getName() << endl;
-			cout << "Выберите номер теста: " << endl;
+			cout << "Р’С‹Р±РµСЂРёС‚Рµ РЅРѕРјРµСЂ С‚РµСЃС‚Р°: " << endl;
 			int nomT = getValue() - 48;
 			if (nomT > 0 && nomT < nom)
 			{
-				if (nameCat == "Архив")
+				if (nameCat == "РђСЂС…РёРІ")
 				{
-					cout << "Вы уверены, что хотите удалить тест №" << nomT << " из категории: " << nameCat; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "да, "; SetColor(13, 0); cout << "2 : "; SetColor(11, 0); cout << "нет" << endl;
+					cout << "Р’С‹ СѓРІРµСЂРµРЅС‹, С‡С‚Рѕ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ С‚РµСЃС‚ в„–" << nomT << " РёР· РєР°С‚РµРіРѕСЂРёРё: " << nameCat; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "РґР°, "; SetColor(13, 0); cout << "2 : "; SetColor(11, 0); cout << "РЅРµС‚" << endl;
 					char uver = getValue02();
 					if (uver == '1')
 					{
 						auto it = allTest[nameCat].begin();
 						advance(it, nomT - 1);
 						allTest[nameCat].erase(it);
-						cout << "Тест удален" << endl;
+						cout << "РўРµСЃС‚ СѓРґР°Р»РµРЅ" << endl;
 					}
-					else cout << "Удаление отменено" << endl;
+					else cout << "РЈРґР°Р»РµРЅРёРµ РѕС‚РјРµРЅРµРЅРѕ" << endl;
 				}
 				else {
 					SetColor(13, 0);
-					cout << "1: "; SetColor(11, 0); cout << "удалить тест" << endl;
+					cout << "1: "; SetColor(11, 0); cout << "СѓРґР°Р»РёС‚СЊ С‚РµСЃС‚" << endl;
 					char ud = getValue02();
 					if (ud == '1')
 					{
-						cout << "Вы уверены, что хотите удалить тест №" << nomT << " из категории: " << nameCat; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "да, "; SetColor(13, 0); cout << "2 : "; SetColor(11, 0); cout << "нет" << endl;
+						cout << "Р’С‹ СѓРІРµСЂРµРЅС‹, С‡С‚Рѕ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ С‚РµСЃС‚ в„–" << nomT << " РёР· РєР°С‚РµРіРѕСЂРёРё: " << nameCat; SetColor(13, 0); cout << " 1: "; SetColor(11, 0); cout << "РґР°, "; SetColor(13, 0); cout << "2 : "; SetColor(11, 0); cout << "РЅРµС‚" << endl;
 						char uver = getValue02();
 						if (uver == '1')
 						{
 							auto it = allTest[nameCat].begin();
 							advance(it, nomT - 1);
 							allTest[nameCat].erase(it);
-							cout << "Тест удален" << endl;
+							cout << "РўРµСЃС‚ СѓРґР°Р»РµРЅ" << endl;
 						}
-						else cout << "Удаление отменено" << endl;
+						else cout << "РЈРґР°Р»РµРЅРёРµ РѕС‚РјРµРЅРµРЅРѕ" << endl;
 					}
 				}
 			}
-			else cout << "Неверный номер теста" << endl;
+			else cout << "РќРµРІРµСЂРЅС‹Р№ РЅРѕРјРµСЂ С‚РµСЃС‚Р°" << endl;
 		}
-		else cout << "Неверный номер категории" << endl;
+		else cout << "РќРµРІРµСЂРЅС‹Р№ РЅРѕРјРµСЂ РєР°С‚РµРіРѕСЂРёРё" << endl;
 		system("pause");
 		save();
 	}
-	void editTest()
-	{
-		system("cls");
-		SetColor(13, 0);
-		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "             Редактирование теста               " << endl; SetColor(13, 0);
-		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		printCategoryNameT(cout);
-		cout << "Выберите категорию" << endl;
-		int nomCat = getValue() - 48;
-		if (nomCat > 0 && nomCat <= allTest.size())
-		{
-			auto it = allTest.begin();
-			advance(it, nomCat - 1);
-			string nameCat = it->first;
-			cout << "Категория: " << nameCat << " содержит тесты:" << endl;
-			int nom = 1;
-			for (auto& x : allTest[nameCat])
-				cout << nom++ << ". " << x.getName() << endl;
-			cout << "Выберите номер теста: " << endl;
-			int nomT = getValue() - 48;
-			if (nomT > 0 && nomT < nom)
-			{
-				auto it = allTest[nameCat].begin();
-				advance(it, nomT - 1);
-				it->edit();
-				cout << "Изменения в тест внесены" << endl;
-			}
-			else cout << "Неверный номер теста" << endl;
-		}
-		else cout << "Неверный номер категории" << endl;
-		system("pause");
-		save();
-	}
-
+	
 	void save()
 	{
 		ofstream fout("test.txt");
@@ -706,54 +638,54 @@ public:
 			fin.get();
 			for (int i = 0; i < k; i++)
 			{
-				int bal_, kolQ;
-				string name_, category_, comment_;
-				bool active_, unFinished_;
-				getline(fin, name_);
-				getline(fin, category_);
-				getline(fin, comment_);
-				fin >> active_;
-				fin >> bal_;
-				fin >> unFinished_;
+				int bal, kolQ;
+				string name, category, comment;
+				bool active, unfinished;
+				getline(fin, name);
+				getline(fin, category);
+				getline(fin, comment);
+				fin >> active;
+				fin >> bal;
+				fin >> unfinished;
 				fin >> kolQ;
 				fin.get();
-				Test t(name_, category_, comment_, active_, bal_, unFinished_);
-				list<Question> lq;
+				Test t(name, category, comment, active, bal, unfinished);
+				list<Quest> lq;
 				for (int i = 0; i < kolQ; i++)
 				{
-					string ques_, ans_;
-					int numAnswer_, bal_, kolAns;
-					getline(fin, ques_);
-					fin >> numAnswer_;
-					fin >> bal_;
-					Question q(ques_, numAnswer_, bal_);
+					string ques, ans;
+					int numAnswer, bal, kolAns;
+					getline(fin, ques);
+					fin >> numAnswer;
+					fin >> bal;
+					Quest q(ques, numAnswer, bal);
 					fin >> kolAns;
 					fin.get();
-					list<string> answer_;
+					list<string> answer;
 					for (int i = 0; i < kolAns; i++)
 					{
-						getline(fin, ans_);
-						answer_.push_back(ans_);
+						getline(fin, ans);
+						answer.push_back(ans);
 					}
-					q.setAnswer(answer_);
+					q.setAnswer(answer);
 					lq.push_back(q);
 				}
 				t.setQuestions(lq);
-				if (allTest.count(category_))
+				if (allTest.count(category))
 				{
-					auto it = allTest.find(category_);
+					auto it = allTest.find(category);
 					it->second.push_back(t);
 				}
 				else
 				{
 					list<Test> lt;
 					lt.push_back(t);
-					allTest.insert(make_pair(category_, lt));
+					allTest.insert(make_pair(category, lt));
 				}
 			}
-			cout << "Тесты загружены" << endl;
+			cout << "РўРµСЃС‚С‹ Р·Р°РіСЂСѓР¶РµРЅС‹" << endl;
 		}
-		else  cout << "Файл с данными тестов не найден" << endl;
+		else  cout << "Р¤Р°Р№Р» СЃ РґР°РЅРЅС‹РјРё С‚РµСЃС‚РѕРІ РЅРµ РЅР°Р№РґРµРЅ" << endl;
 	}
 
 	void menu()
@@ -762,16 +694,16 @@ public:
 		{
 			system("cls");
 			SetColor(13, 0);
-			cout << "1: "; SetColor(11, 0); cout << "работа с тестами " << endl; SetColor(13, 0);
-			cout << "2: "; SetColor(11, 0); cout << "сохранить" << endl; SetColor(13, 0);
-			cout << "3: "; SetColor(11, 0); cout << "загрузить" << endl; SetColor(13, 0);
-			cout << "0: "; SetColor(11, 0); cout << "выход" << endl; SetColor(11, 0);
+			cout << "1: "; SetColor(11, 0); cout << "СЂР°Р±РѕС‚Р° СЃ С‚РµСЃС‚Р°РјРё " << endl; SetColor(13, 0);
+			cout << "2: "; SetColor(11, 0); cout << "СЃРѕС…СЂР°РЅРёС‚СЊ" << endl; SetColor(13, 0);
+			cout << "3: "; SetColor(11, 0); cout << "Р·Р°РіСЂСѓР·РёС‚СЊ" << endl; SetColor(13, 0);
+			cout << "0: "; SetColor(11, 0); cout << "РІС‹С…РѕРґ" << endl; SetColor(11, 0);
 			char vibor = getValue();
 			switch (vibor)
 			{
 			case '1': workTest(); break;
 			case '2': save(); break;
-			case '3': load(); system("pause"); break;
+			//case '3': load(); system("pause"); break;
 			case '0': exit(0); break;
 			default: break;
 			}
@@ -787,7 +719,7 @@ public:
 				system("cls");
 				SetColor(13, 0);
 				cout << "------------------------------------------------" << endl; SetColor(11, 0);
-				cout << x.first << " -  " << x.second.size() << " тестов" << endl; SetColor(13, 0);
+				cout << x.first << " -  " << x.second.size() << " С‚РµСЃС‚РѕРІ" << endl; SetColor(13, 0);
 				cout << "------------------------------------------------" << endl; SetColor(11, 0);
 				system("pause");
 				for (auto& it : x.second)
@@ -799,7 +731,7 @@ public:
 			}
 		}
 		else {
-			cout << "Нет сохраненных тестов" << endl;
+			cout << "РќРµС‚ СЃРѕС…СЂР°РЅРµРЅРЅС‹С… С‚РµСЃС‚РѕРІ" << endl;
 			system("pause");
 		}
 	}
@@ -812,12 +744,12 @@ public:
 			cout << "------------------------------------------------" << endl; SetColor(11, 0);
 			for (auto& x : allTest)
 			{
-				cout << nom++ << "." << x.first << " -  " << x.second.size() << " тест." << endl;
+				cout << nom++ << "." << x.first << " -  " << x.second.size() << " С‚РµСЃС‚." << endl;
 			}
 			SetColor(13, 0);
 			cout << "------------------------------------------------" << endl; SetColor(11, 0);
 		}
-		else cout << "Нет сохраненных категорий!" << endl;
+		else cout << "РќРµС‚ СЃРѕС…СЂР°РЅРµРЅРЅС‹С… РєР°С‚РµРіРѕСЂРёР№!" << endl;
 	}
 	void printCategoryWithoutArc()
 	{
@@ -828,27 +760,27 @@ public:
 			cout << "------------------------------------------------" << endl; SetColor(11, 0);
 			for (auto& x : allTest)
 			{
-				if (x.first != "Архив")
-					cout << nom++ << "." << x.first << " -  " << x.second.size() << " тест." << endl;
+				if (x.first != "РђСЂС…РёРІ")
+					cout << nom++ << "." << x.first << " -  " << x.second.size() << " С‚РµСЃС‚." << endl;
 			}
 			SetColor(13, 0);
 			cout << "------------------------------------------------" << endl; SetColor(11, 0);
 		}
-		else cout << "Нет сохраненных категорий!" << endl;
+		else cout << "РќРµС‚ СЃРѕС…СЂР°РЅРµРЅРЅС‹С… РєР°С‚РµРіРѕСЂРёР№!" << endl;
 	}
 
 	void print()
 	{
 		system("cls");
 		SetColor(13, 0);
-		cout << "1: "; SetColor(11, 0); cout << "печать всех тестов" << endl; SetColor(13, 0);
-		cout << "2: "; SetColor(11, 0); cout << "выбрать категорию" << endl;
+		cout << "1: "; SetColor(11, 0); cout << "РїРµС‡Р°С‚СЊ РІСЃРµС… С‚РµСЃС‚РѕРІ" << endl; SetColor(13, 0);
+		cout << "2: "; SetColor(11, 0); cout << "РІС‹Р±СЂР°С‚СЊ РєР°С‚РµРіРѕСЂРёСЋ" << endl;
 		char vibor = getValue02();
 		if (vibor == '1')
 			printAllTest();
 		else {
 			printCategory();
-			cout << "Выберите категорию:" << endl;
+			cout << "Р’С‹Р±РµСЂРёС‚Рµ РєР°С‚РµРіРѕСЂРёСЋ:" << endl;
 			int nomCat = getValue() - 48;
 			if (nomCat > 0 && nomCat <= allTest.size())
 			{
@@ -857,8 +789,8 @@ public:
 				string nameCat = it->first;
 				SetColor(13, 0);
 				cout << "------------------------------------------------" << endl;
-				cout << "1: "; SetColor(11, 0); cout << "печать всех тестов выбранной категории" << endl; SetColor(13, 0);
-				cout << "2: "; SetColor(11, 0); cout << "выбрать тест" << endl;
+				cout << "1: "; SetColor(11, 0); cout << "РїРµС‡Р°С‚СЊ РІСЃРµС… С‚РµСЃС‚РѕРІ РІС‹Р±СЂР°РЅРЅРѕР№ РєР°С‚РµРіРѕСЂРёРё" << endl; SetColor(13, 0);
+				cout << "2: "; SetColor(11, 0); cout << "РІС‹Р±СЂР°С‚СЊ С‚РµСЃС‚" << endl;
 				char kolT = getValue02();
 				if (kolT == '1')
 					printAllTestFromCateg(nameCat);
@@ -866,11 +798,11 @@ public:
 				{
 					SetColor(13, 0);
 					cout << "------------------------------------------------" << endl; SetColor(11, 0);
-					cout << "Категория: " << nameCat << " содержит " << allTest[nameCat].size() << " теста(ов)" << endl;
+					cout << "РљР°С‚РµРіРѕСЂРёСЏ: " << nameCat << " СЃРѕРґРµСЂР¶РёС‚ " << allTest[nameCat].size() << " С‚РµСЃС‚Р°(РѕРІ)" << endl;
 					int nom = 1;
 					for (auto& x : allTest[nameCat])
 						cout << nom++ << ". " << x.getName() << endl;
-					cout << "Выберите номер теста: " << endl;
+					cout << "Р’С‹Р±РµСЂРёС‚Рµ РЅРѕРјРµСЂ С‚РµСЃС‚Р°: " << endl;
 					int nomT = getValue() - 48;
 					if (nomT > 0 && nomT < nom)
 					{
@@ -879,13 +811,13 @@ public:
 						system("cls");
 						it->print(cout);
 					}
-					else cout << "Неправильный номер" << endl;
+					else cout << "РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ РЅРѕРјРµСЂ" << endl;
 					system("pause");
 				}
 			}
 			else
 			{
-				cout << "Неверный номер категории" << endl;
+				cout << "РќРµРІРµСЂРЅС‹Р№ РЅРѕРјРµСЂ РєР°С‚РµРіРѕСЂРёРё" << endl;
 				system("pause");
 			}
 		}
@@ -896,7 +828,7 @@ public:
 		int nom = 1;
 		for (auto& x : allTest)
 		{
-			out << nom++ << ".  " << x.first << " - " << x.second.size() << " теста(ов)" << endl;
+			out << nom++ << ".  " << x.first << " - " << x.second.size() << " С‚РµСЃС‚Р°(РѕРІ)" << endl;
 			for (auto& it : x.second)
 				out << "            " << it.getName() << endl;
 			SetColor(13, 0);
@@ -907,7 +839,7 @@ public:
 	{
 		SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "Категория: " << nameCat << " - " << allTest[nameCat].size() << " тестов" << endl;
+		cout << "РљР°С‚РµРіРѕСЂРёСЏ: " << nameCat << " - " << allTest[nameCat].size() << " С‚РµСЃС‚РѕРІ" << endl;
 		SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
 		for (auto& x : allTest[nameCat])
@@ -916,109 +848,6 @@ public:
 			system("pause");
 			system("cls");
 		}
-	}
-
-	void printFile()
-	{
-		system("cls");
-		SetColor(13, 0);
-		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "             Печать тестов в файл               " << endl; SetColor(13, 0);
-		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "Введите имя файла: ";
-		string namef;
-		do
-		{
-			cin >> namef;
-			if (namef == "test.txt" || namef == "user.txt")
-				cout << "Это служебные имена файлов, введите другое имя: ";
-		} while (namef == "test.txt" || namef == "user.txt");
-		SetColor(13, 0);
-		cout << "1: "; SetColor(11, 0); cout << "печать в файл всех тестов" << endl; SetColor(13, 0);
-		cout << "2: "; SetColor(11, 0); cout << "выбрать категорию" << endl;
-		char vibor = getValue02();
-		if (vibor == '1')
-			printFileAllTest(namef);
-		else {
-			printCategory();
-			cout << "Выберите категорию:" << endl;
-			int nomCat = getValue() - 48;
-			if (nomCat > 0 && nomCat <= allTest.size())
-			{
-				auto it = allTest.begin();
-				advance(it, nomCat - 1);
-				string nameCat = it->first;
-				SetColor(13, 0);
-				cout << "------------------------------------------------" << endl;
-				cout << "1: "; SetColor(11, 0); cout << "печать в файл всех тестов выбранной категории" << endl; SetColor(13, 0);
-				cout << "2: "; SetColor(11, 0); cout << "выбрать тест" << endl;
-				char kolT = getValue02();
-				if (kolT == '1')
-					printFileAllTestFromCateg(namef, nameCat);
-				else
-				{
-					SetColor(13, 0);
-					cout << "------------------------------------------------" << endl; SetColor(11, 0);
-					cout << "Категория: " << nameCat << " содержит " << allTest[nameCat].size() << " теста(ов)" << endl;
-					int nom = 1;
-					for (auto& x : allTest[nameCat])
-						cout << nom++ << ". " << x.getName() << endl;
-					cout << "Выберите номер теста: " << endl;
-					int nomT = getValue() - 48;
-					if (nomT > 0 && nomT < nom)
-					{
-						printFileOneTest(namef, nameCat, nomT);
-					}
-					else cout << "Неправильный номер" << endl;
-				}
-			}
-			else	cout << "Неверный номер категории" << endl;
-		}
-		system("pause");
-	}
-	void printFileAllTest(string namef)
-	{
-		if (allTest.size())
-		{
-			ofstream fout(namef);
-			SetColor(13, 0);
-			fout << "------------------------------------------------" << endl; SetColor(11, 0);
-			for (auto& x : allTest)
-			{
-				fout << x.first << " -  " << x.second.size() << " тестов" << endl; SetColor(13, 0);
-				fout << "------------------------------------------------" << endl; SetColor(11, 0);
-				for (auto& it : x.second)
-				{
-					it.print(fout);
-				}
-			}
-			fout.close();
-			cout << "Тесты успешно записаны в указанный файл!" << endl;
-		}
-		else {
-			cout << "Нет сохраненных тестов" << endl;
-		}
-	}
-	void printFileAllTestFromCateg(string namef, string nameCat)
-	{
-		ofstream fout(namef);
-		SetColor(13, 0);
-		fout << "------------------------------------------------" << endl; SetColor(11, 0);
-		fout << "Категория: " << nameCat << " - " << allTest[nameCat].size() << " тестов" << endl; SetColor(13, 0);
-		fout << "------------------------------------------------" << endl; SetColor(11, 0);
-		for (auto& it : allTest[nameCat])
-			it.print(fout);
-		fout.close();
-		cout << "Все тесты категории: " << nameCat << " записаны в указанный файл" << endl;
-	}
-	void printFileOneTest(string namef, string nameCat, int nom)
-	{
-		ofstream fout(namef);
-		auto it = allTest[nameCat].begin();
-		advance(it, nom - 1);
-		it->print(fout);
-		fout.close();
-		cout << "Тест записан в указанный файл" << endl;
 	}
 
 	int getKolTest()
@@ -1040,22 +869,18 @@ public:
 			system("cls");
 			SetColor(13, 0);
 			cout << "------------------------------------------------" << endl; SetColor(11, 0);
-			cout << "               Работа с тестами                 " << endl; SetColor(13, 0);
+			cout << "               Р Р°Р±РѕС‚Р° СЃ С‚РµСЃС‚Р°РјРё                 " << endl; SetColor(13, 0);
 			cout << "------------------------------------------------" << endl;
-			cout << "1: "; SetColor(11, 0); cout << "добавить тест " << endl; SetColor(13, 0);
-			cout << "2: "; SetColor(11, 0); cout << "удалить тест " << endl; SetColor(13, 0);
-			cout << "3: "; SetColor(11, 0); cout << "редактировать тест " << endl; SetColor(13, 0);
-			cout << "4: "; SetColor(11, 0); cout << "печать на экран" << endl; SetColor(13, 0);
-			cout << "5: "; SetColor(11, 0); cout << "сохранить в файл" << endl; SetColor(13, 0);
-			cout << "0: "; SetColor(11, 0); cout << "выход" << endl;
+			cout << "1: "; SetColor(11, 0); cout << "РґРѕР±Р°РІРёС‚СЊ С‚РµСЃС‚ " << endl; SetColor(13, 0);
+			cout << "2: "; SetColor(11, 0); cout << "СѓРґР°Р»РёС‚СЊ С‚РµСЃС‚ " << endl; SetColor(13, 0);
+			cout << "3: "; SetColor(11, 0); cout << "РїРµС‡Р°С‚СЊ РЅР° СЌРєСЂР°РЅ" << endl; SetColor(13, 0);
+			cout << "0: "; SetColor(11, 0); cout << "РІС‹С…РѕРґ" << endl;
 			char vibor = getValue();
 			switch (vibor)
 			{
 			case '1':addTest(); break;
 			case '2': delTest(); break;
-			case '3': editTest(); break;
-			case '4': print(); break;
-			case '5': printFile(); break;
+			case '3': print(); break;
 			case '0': return;
 			default: break;
 			}
@@ -1065,23 +890,23 @@ public:
 	void getTest(Test& t, bool& uspeh)
 	{
 		printCategoryWithoutArc();
-		cout << "Выберите номер категории" << endl;
+		cout << "Р’С‹Р±РµСЂРёС‚Рµ РЅРѕРјРµСЂ РєР°С‚РµРіРѕСЂРёРё" << endl;
 		int nomCat = getValue() - 48;
 		int kolCat = getSize();
-		if (allTest.count("Архив"))
+		if (allTest.count("РђСЂС…РёРІ"))
 			kolCat--;
 		if (nomCat > 0 && nomCat <= kolCat)
 		{
 			auto it = allTest.begin();
-			if (allTest.count("Архив"))
+			if (allTest.count("РђСЂС…РёРІ"))
 				advance(it, nomCat);
 			else advance(it, nomCat - 1);
 			string nameCat = it->first;
-			cout << "Категория: " << nameCat << " содержит тесты:" << endl;
+			cout << "РљР°С‚РµРіРѕСЂРёСЏ: " << nameCat << " СЃРѕРґРµСЂР¶РёС‚ С‚РµСЃС‚С‹:" << endl;
 			int nom = 1;
 			for (auto& x : allTest[nameCat])
 				cout << nom++ << ". " << x.getName() << endl;
-			cout << "Выберите номер теста: " << endl;
+			cout << "Р’С‹Р±РµСЂРёС‚Рµ РЅРѕРјРµСЂ С‚РµСЃС‚Р°: " << endl;
 			int nomT = getValue() - 48;
 			if (nomT > 0 && nomT < nom)
 			{
@@ -1091,13 +916,13 @@ public:
 				uspeh = true;
 			}
 			else {
-				cout << "Неверный номер теста" << endl;
+				cout << "РќРµРІРµСЂРЅС‹Р№ РЅРѕРјРµСЂ С‚РµСЃС‚Р°" << endl;
 				uspeh = false;
 				system("pause");
 			}
 		}
 		else {
-			cout << "Неверный номер категории" << endl;
+			cout << "РќРµРІРµСЂРЅС‹Р№ РЅРѕРјРµСЂ РєР°С‚РµРіРѕСЂРёРё" << endl;
 			uspeh = false;
 			system("pause");
 		}
@@ -1116,7 +941,7 @@ public:
 	string getNameCatStat(int nomCat)
 	{
 		auto it = allTest.begin();
-		if (allTest.count("Архив"))
+		if (allTest.count("РђСЂС…РёРІ"))
 			advance(it, nomCat);
 		else advance(it, nomCat - 1);
 		return it->first;
@@ -1141,7 +966,7 @@ public:
 	}
 };
 
-ostream& operator<<(ostream& out, const Question& q)
+ostream& operator<<(ostream& out, const Quest& q)
 {
 	out << q.Ques << endl;
 	out << q.numAnswer << endl;

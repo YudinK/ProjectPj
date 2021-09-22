@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include"User.h"
 #include"Test.h"
 
@@ -18,13 +18,13 @@ public:
 			SetColor(13, 0);
 			cout << "------------------------------------------------" << endl;
 			SetColor(11, 0);
-			cout << "|    Äîáðî ïîæàëîâàòü â ñèñòåìó òåñòèðîâàíèÿ   |" << endl;
+			cout << "|    Ð”Ð¾Ð±Ñ€Ð¾ Ð¿Ð¾Ð¶Ð°Ð»Ð¾Ð²Ð°Ñ‚ÑŒ Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ   |" << endl;
 			SetColor(13, 0);
 			cout << "------------------------------------------------" << endl;
-			cout << "1: "; SetColor(11, 0); cout << "Âõîä" << endl; SetColor(13, 0);
-			cout << "2: "; SetColor(11, 0); cout << "Ðåãèñòðàöèÿ" << endl; SetColor(13, 0);
-			cout << "3: "; SetColor(11, 0); cout << "Ïðîñìîòð òåñòîâ" << endl; SetColor(13, 0);
-			cout << "0: "; SetColor(11, 0); cout << "Çàêðûòü ïðîãðàììó" << endl;
+			cout << "1: "; SetColor(11, 0); cout << "Ð’Ñ…Ð¾Ð´" << endl; SetColor(13, 0);
+			cout << "2: "; SetColor(11, 0); cout << "Ð ÐµÐ³Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ" << endl; SetColor(13, 0);
+			cout << "3: "; SetColor(11, 0); cout << "ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€ Ñ‚ÐµÑÑ‚Ð¾Ð²" << endl; SetColor(13, 0);
+			cout << "0: "; SetColor(11, 0); cout << "Ð—Ð°ÐºÑ€Ñ‹Ñ‚ÑŒ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñƒ" << endl;
 
 			char vibor = getValue03();
 			switch (vibor)
@@ -39,37 +39,37 @@ public:
 	void vhod()
 	{
 		string log, pas;
-		cout << "Ëîãèí: ";
+		cout << "Ð›Ð¾Ð³Ð¸Ð½: ";
 		cin >> log;
 		hash<string>encrypt;
 		log = to_string(encrypt(log));
 		if (admin.getLogin() == log)
 		{
-			cout << "Ïàðîëü: ";
+			cout << "ÐŸÐ°Ñ€Ð¾Ð»ÑŒ: ";
 			cin >> pas;
 			pas = to_string(encrypt(pas));
 			if (admin.getPass() == pas)
 				vhodAdmin();
 			else {
-				cout << "Íåâåðíûé ïàðîëü! " << endl;
+				cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ! " << endl;
 				system("pause");
 			}
 		}
 		else {
 			if (stud.count(log))
 			{
-				cout << "Ïàðîëü: ";
+				cout << "ÐŸÐ°Ñ€Ð¾Ð»ÑŒ: ";
 				cin >> pas;
 				pas = to_string(encrypt(pas));
 				if (stud[log].getPass() == pas)
 					vhod(log);
 				else {
-					cout << "Íåâåðíûé ïàðîëü! " << endl;
+					cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ! " << endl;
 					system("pause");
 				}
 			}
 			else {
-				cout << "Ïîëüçîâàòåëü ñ òàêèì ëîãèíîì íå íàéäåí" << endl;
+				cout << "ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒ Ñ Ñ‚Ð°ÐºÐ¸Ð¼ Ð»Ð¾Ð³Ð¸Ð½Ð¾Ð¼ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½" << endl;
 				system("pause");
 			}
 		}
@@ -82,14 +82,14 @@ public:
 			system("cls");
 			SetColor(13, 0);
 			cout << "------------------------------------------------" << endl;SetColor(11, 0);
-			cout << "          Äîáðî ïîæàëîâàòü â ñèñòåìó          " << endl;
-			cout << "            ðåæèìå Ñòóäåíò èìÿ  ";
+			cout << "          Ð”Ð¾Ð±Ñ€Ð¾ Ð¿Ð¾Ð¶Ð°Ð»Ð¾Ð²Ð°Ñ‚ÑŒ Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ          " << endl;
+			cout << "            Ñ€ÐµÐ¶Ð¸Ð¼Ðµ Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚ Ð¸Ð¼Ñ  ";
 			SetColor(10, 0);
 			cout << stud[log].getFIO() << endl; SetColor(13, 0);
 			cout << "------------------------------------------------" << endl;
-			cout << "1: "; SetColor(11, 0); cout << "Ñòàòèñòèêà: ïðîéäåííûå è íåçàâåðøåííûå òåñòû" << endl; SetColor(13, 0);
-			cout << "2: "; SetColor(11, 0); cout << "Ïðîéòè òåñò" << endl; SetColor(13, 0);
-			cout << "0: "; SetColor(11, 0); cout << "Âûõîä" << endl;
+			cout << "1: "; SetColor(11, 0); cout << "Ð¡Ñ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ°: Ð¿Ñ€Ð¾Ð¹Ð´ÐµÐ½Ð½Ñ‹Ðµ Ð¸ Ð½ÐµÐ·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð½Ñ‹Ðµ Ñ‚ÐµÑÑ‚Ñ‹" << endl; SetColor(13, 0);
+			cout << "2: "; SetColor(11, 0); cout << "ÐŸÑ€Ð¾Ð¹Ñ‚Ð¸ Ñ‚ÐµÑÑ‚" << endl; SetColor(13, 0);
+			cout << "0: "; SetColor(11, 0); cout << "Ð’Ñ‹Ñ…Ð¾Ð´" << endl;
 			char vibor = getValue03();
 			switch (vibor)
 			{
@@ -107,15 +107,15 @@ public:
 			system("cls");
 			SetColor(13, 0);
 			cout << "------------------------------------------------" << endl; SetColor(11, 0);
-			cout << "         Äîáðî ïîæàëîâàòü â ñèñòåìó             " << endl;
-			cout << "           ðåæèì Àäìèíà èìÿ ";
+			cout << "         Ð”Ð¾Ð±Ñ€Ð¾ Ð¿Ð¾Ð¶Ð°Ð»Ð¾Ð²Ð°Ñ‚ÑŒ Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ             " << endl;
+			cout << "           Ñ€ÐµÐ¶Ð¸Ð¼ ÐÐ´Ð¼Ð¸Ð½Ð° Ð¸Ð¼Ñ ";
 			SetColor(10, 0);
 			cout << admin.getFIO() << endl;
 			SetColor(13, 0);
 			cout << "------------------------------------------------" << endl;
-			cout << "1: "; SetColor(11, 0); cout << "Ñòàòèñòèêà" << endl; SetColor(13, 0);
-			cout << "2: "; SetColor(11, 0); cout << "Ðàáîòà ñ òåñòàìè" << endl; SetColor(13, 0);
-			cout << "0: "; SetColor(11, 0); cout << "Âûõîä" << endl;;
+			cout << "1: "; SetColor(11, 0); cout << "Ð¡Ñ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ°" << endl; SetColor(13, 0);
+			cout << "2: "; SetColor(11, 0); cout << "Ð Ð°Ð±Ð¾Ñ‚Ð° Ñ Ñ‚ÐµÑÑ‚Ð°Ð¼Ð¸" << endl; SetColor(13, 0);
+			cout << "0: "; SetColor(11, 0); cout << "Ð’Ñ‹Ñ…Ð¾Ð´" << endl;;
 			char vibor = getValue();
 			switch (vibor)
 			{
@@ -131,7 +131,7 @@ public:
 	{
 		if (t.getSize())
 			t.printCategoryNameT(cout);
-		else cout << "Íåò ñîõðàíåííûõ òåñòîâ" << endl;
+		else cout << "ÐÐµÑ‚ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð½Ñ‹Ñ… Ñ‚ÐµÑÑ‚Ð¾Ð²" << endl;
 		system("pause");
 	}
 
@@ -140,27 +140,27 @@ public:
 		system("cls");
 		SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "|       Ðåãèñòðàöèÿ íîâîãî ïîëüçîâàòåëÿ        |" << endl; SetColor(13, 0);
+		cout << "|       Ð ÐµÐ³Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ Ð½Ð¾Ð²Ð¾Ð³Ð¾ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ        |" << endl; SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
 
 		if (admin.getLogin() != "" && admin.getPass() != "")
 		{
-			cout << "|  Còóäåíò                                     |" << endl; SetColor(13, 0);
+			cout << "|  CÑ‚ÑƒÐ´ÐµÐ½Ñ‚                                     |" << endl; SetColor(13, 0);
 			cout << "------------------------------------------------" << endl << endl; SetColor(11, 0);
 			Student st;
 			string log, log1;
 			cin.ignore();
 			do {
-				cout << "Ëîãèí: ";
+				cout << "Ð›Ð¾Ð³Ð¸Ð½: ";
 				getline(cin, log);
 				if (!log.length() || isSymbol(log, ' '))
 				{
-					SetColor(11, 0); cout << "Ëîãèí äîëæåí ñîäåðæàòü ëþáûå ñèìâîëû, êðîìå ïðîáåëà" << endl;
+					SetColor(11, 0); cout << "Ð›Ð¾Ð³Ð¸Ð½ Ð´Ð¾Ð»Ð¶ÐµÐ½ ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ñ‚ÑŒ Ð»ÑŽÐ±Ñ‹Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ‹, ÐºÑ€Ð¾Ð¼Ðµ Ð¿Ñ€Ð¾Ð±ÐµÐ»Ð°" << endl;
 				}
 				hash<string> encrypt;
 				log1 = to_string(encrypt(log));
 				if (stud.count(log1))
-					cout << "Ëîãèí çàíÿò" << endl;
+					cout << "Ð›Ð¾Ð³Ð¸Ð½ Ð·Ð°Ð½ÑÑ‚" << endl;
 			} while (isSymbol(log, ' ') || stud.count(log1));
 			st.setLogin(log1);
 			cin >> st;
@@ -169,22 +169,22 @@ public:
 			vhod(st.getLogin());
 		}
 		else {
-			cout << "Â ñèñòåìå íåò àäìèíèñòðàòîðà, âû ìîæåòå çàðåãèñòðèðîâàòüñÿ êàê àäìèíèñòðàòîð" << endl;
-			cout << "Ïðîäîëæèòü? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "äà "; SetColor(13, 0); cout << "| 2: "; SetColor(11, 0); cout << "íåò" << endl;
+			cout << "Ð’ ÑÐ¸ÑÑ‚ÐµÐ¼Ðµ Ð½ÐµÑ‚ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€Ð°, Ð²Ñ‹ Ð¼Ð¾Ð¶ÐµÑ‚Ðµ Ð·Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒÑÑ ÐºÐ°Ðº Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€" << endl;
+			cout << "ÐŸÑ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÑŒ? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "Ð´Ð° "; SetColor(13, 0); cout << "| 2: "; SetColor(11, 0); cout << "Ð½ÐµÑ‚" << endl;
 			char vibor = getValue02();
 			if (vibor == '1')
 			{
 				SetColor(13, 0);
 				cout << "------------------------------------------------" << endl; SetColor(11, 0);
-				cout << "|          Ðåãèñòðàöèÿ àäìèíèñòðàòîðà          |" << endl; SetColor(13, 0);
+				cout << "|          Ð ÐµÐ³Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€Ð°          |" << endl; SetColor(13, 0);
 				cout << "------------------------------------------------" << endl; SetColor(11, 0);
 				string log;
 				do {
-					cout << "Ëîãèí: ";
+					cout << "Ð›Ð¾Ð³Ð¸Ð½: ";
 					getline(cin, log);
 					if (!log.length() || isSymbol(log, ' '))
 					{
-						SetColor(11, 0); cout << "Ëîãèí äîëæåí ñîäåðæàòü ëþáûå ñèìâîëû, êðîìå ïðîáåëà" << endl;
+						SetColor(11, 0); cout << "Ð›Ð¾Ð³Ð¸Ð½ Ð´Ð¾Ð»Ð¶ÐµÐ½ ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ñ‚ÑŒ Ð»ÑŽÐ±Ñ‹Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ‹, ÐºÑ€Ð¾Ð¼Ðµ Ð¿Ñ€Ð¾Ð±ÐµÐ»Ð°" << endl;
 					}
 				} while (isSymbol(log, ' '));
 				hash<string> encrypt;
@@ -283,28 +283,28 @@ public:
 	{
 		system("cls"); SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "          Äîáðî ïîæàëîâàòü â ñèñòåìó            " << endl;
-		cout << "            ðåæèì Ñòóäåíò èìÿ  ";
+		cout << "          Ð”Ð¾Ð±Ñ€Ð¾ Ð¿Ð¾Ð¶Ð°Ð»Ð¾Ð²Ð°Ñ‚ÑŒ Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ            " << endl;
+		cout << "            Ñ€ÐµÐ¶Ð¸Ð¼ Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚ Ð¸Ð¼Ñ  ";
 		SetColor(10, 0);
 		cout << stud[login].getFIO() << endl;
 		SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "                 Òåñòèðîâàíèå                  " << endl; SetColor(13, 0);
+		cout << "                 Ð¢ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ                  " << endl; SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
 		if (stud[login].getKolUnFinished())
 		{
-			cout << "Ó âàñ åñòü íåçàâåðøåííûå òåñòû:" << endl;
+			cout << "Ð£ Ð²Ð°Ñ ÐµÑÑ‚ÑŒ Ð½ÐµÐ·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð½Ñ‹Ðµ Ñ‚ÐµÑÑ‚Ñ‹:" << endl;
 			stud[login].printUnFinished();
-			cout << "Æåëàåòå çàâåðøèòü? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "äà "; SetColor(13, 0); cout << " | 2: "; SetColor(11, 0); cout << "íåò" << endl;
+			cout << "Ð–ÐµÐ»Ð°ÐµÑ‚Ðµ Ð·Ð°Ð²ÐµÑ€ÑˆÐ¸Ñ‚ÑŒ? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "Ð´Ð° "; SetColor(13, 0); cout << " | 2: "; SetColor(11, 0); cout << "Ð½ÐµÑ‚" << endl;
 			char vibor = getValue02();
 			if (vibor == '1')
 			{
-				cout << "Ââåäèòå íîìåð òåñòà, êîòîðûé õîòèòå ïðîäîëæèòü: " << endl;
+				cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ‚ÐµÑÑ‚Ð°, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÑŒ: " << endl;
 				int nom = getValue() - 48;
 				if (nom > 0 && nom <= stud[login].getKolUnFinished())
 					goOldTest(login, nom);
 				else {
-					cout << "Íåâåðíûé íîìåð" << endl;
+					cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€" << endl;
 					system("pause");
 				}
 			}
@@ -317,7 +317,7 @@ public:
 	{
 		system("cls"); SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "                 Òåñòèðîâàíèå                   " << endl;
+		cout << "                 Ð¢ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ                   " << endl;
 		bool uspeh;
 		Test test;
 		int kolQFinished, kolPrav, balTest;
@@ -333,19 +333,19 @@ public:
 					int m = round(12. * balTest / test.getBal());
 					TestFinished tf(test.getName(), test.getCategory(), kolPrav, p, balTest, m);
 					stud[login].pushTF(tf);
-					cout << "Òåñòèðîâàíèå çàêîí÷åíî. Êîëè÷åñòâî ïðàâèëüíûõ îòâåòîâ: " << kolPrav << "  Ïðîöåíò ïðàâèëüíûõ îòâåòîâ: " << p << " Îöåíêà: " << m << endl;
+					cout << "Ð¢ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð·Ð°ÐºÐ¾Ð½Ñ‡ÐµÐ½Ð¾. ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ñ… Ð¾Ñ‚Ð²ÐµÑ‚Ð¾Ð²: " << kolPrav << "  ÐŸÑ€Ð¾Ñ†ÐµÐ½Ñ‚ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ñ… Ð¾Ñ‚Ð²ÐµÑ‚Ð¾Ð²: " << p << " ÐžÑ†ÐµÐ½ÐºÐ°: " << m << endl;
 				}
 				else {
 					TestUnFinished tuf(test.getName(), test.getCategory(), kolPrav, p, balTest, kolQFinished);
 					stud[login].pushTUF(tuf);
-					cout << "Òåñòèðîâàíèå ïðåðâàíî. Êîëè÷åñòâî ïðàâèëüíûõ îòâåòîâ: " << kolPrav << "  Ïðîöåíò ïðàâèëüíûõ îòâåòîâ: " << p << endl;
-					cout << "Âû ìîæåòå ïðîäîëæèòü â ëþáîå óäîáíîå äëÿ âàñ âðåìÿ" << endl;
+					cout << "Ð¢ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¿Ñ€ÐµÑ€Ð²Ð°Ð½Ð¾. ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ñ… Ð¾Ñ‚Ð²ÐµÑ‚Ð¾Ð²: " << kolPrav << "  ÐŸÑ€Ð¾Ñ†ÐµÐ½Ñ‚ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ñ… Ð¾Ñ‚Ð²ÐµÑ‚Ð¾Ð²: " << p << endl;
+					cout << "Ð’Ñ‹ Ð¼Ð¾Ð¶ÐµÑ‚Ðµ Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÑŒ Ð² Ð»ÑŽÐ±Ð¾Ðµ ÑƒÐ´Ð¾Ð±Ð½Ð¾Ðµ Ð´Ð»Ñ Ð²Ð°Ñ Ð²Ñ€ÐµÐ¼Ñ" << endl;
 				}
 				saveUser();
 				system("pause");
 			}
 			else {
-				cout << "Äàííûé òåñò íåàêòèâåí. Âûáåðèòå äðóãîé òåñò äëÿ ïðîõîæäåíèÿ." << endl;
+				cout << "Ð”Ð°Ð½Ð½Ñ‹Ð¹ Ñ‚ÐµÑÑ‚ Ð½ÐµÐ°ÐºÑ‚Ð¸Ð²ÐµÐ½. Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´Ñ€ÑƒÐ³Ð¾Ð¹ Ñ‚ÐµÑÑ‚ Ð´Ð»Ñ Ð¿Ñ€Ð¾Ñ…Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ." << endl;
 				system("pause");
 			}
 		}
@@ -373,20 +373,20 @@ public:
 				TestFinished tf(test.getName(), test.getCategory(), kolPrav2, p, b2, m);
 				stud[login].pushTF(tf);
 				stud[login].delTUF(nomTUF);
-				cout << "Òåñòèðîâàíèå çàêîí÷åíî. Êîëè÷åñòâî ïðàâèëüíûõ îòâåòîâ: " << kolPrav2 << "  Ïðîöåíò ïðàâèëüíûõ îòâåòîâ: " << p << " Îöåíêà: " << m << endl;
+				cout << "Ð¢ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð·Ð°ÐºÐ¾Ð½Ñ‡ÐµÐ½Ð¾. ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ñ… Ð¾Ñ‚Ð²ÐµÑ‚Ð¾Ð²: " << kolPrav2 << "  ÐŸÑ€Ð¾Ñ†ÐµÐ½Ñ‚ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ñ… Ð¾Ñ‚Ð²ÐµÑ‚Ð¾Ð²: " << p << " ÐžÑ†ÐµÐ½ÐºÐ°: " << m << endl;
 			}
 			else {
 				TestUnFinished tuf(test.getName(), test.getCategory(), kolPrav2, p, b2, kolFin2);
 				stud[login].delTUF(nomTUF);
 				stud[login].pushTUF(tuf);
-				cout << "Òåñòèðîâàíèå ïðåðâàíî. Êîëè÷åñòâî ïðàâèëüíûõ îòâåòîâ: " << kolPrav2 << "  Ïðîöåíò ïðàâèëüíûõ îòâåòîâ: " << p << endl;
-				cout << "Âû ìîæåòå ïðîäîëæèòü â ëþáîå âðåìÿ" << endl;
+				cout << "Ð¢ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¿Ñ€ÐµÑ€Ð²Ð°Ð½Ð¾. ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ñ… Ð¾Ñ‚Ð²ÐµÑ‚Ð¾Ð²: " << kolPrav2 << "  ÐŸÑ€Ð¾Ñ†ÐµÐ½Ñ‚ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ñ… Ð¾Ñ‚Ð²ÐµÑ‚Ð¾Ð²: " << p << endl;
+				cout << "Ð’Ñ‹ Ð¼Ð¾Ð¶ÐµÑ‚Ðµ Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÑŒ Ð² Ð»ÑŽÐ±Ð¾Ðµ Ð²Ñ€ÐµÐ¼Ñ" << endl;
 			}
 			saveUser();
 			system("pause");
 		}
 		else {
-			cout << "Äàííûé òåñò íå íàéäåí â ñïèñêå àêòèâíûõ òåñòîâ, âîçìîæíî îí óäàëåí. Îáðàòèòåñü ê àäìèíèñòðàòîðó" << endl;
+			cout << "Ð”Ð°Ð½Ð½Ñ‹Ð¹ Ñ‚ÐµÑÑ‚ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½ Ð² ÑÐ¿Ð¸ÑÐºÐµ Ð°ÐºÑ‚Ð¸Ð²Ð½Ñ‹Ñ… Ñ‚ÐµÑÑ‚Ð¾Ð², Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ Ð¾Ð½ ÑƒÐ´Ð°Ð»ÐµÐ½. ÐžÐ±Ñ€Ð°Ñ‚Ð¸Ñ‚ÐµÑÑŒ Ðº Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€Ñƒ" << endl;
 			system("pause");
 		}
 
@@ -398,17 +398,17 @@ public:
 		{
 			system("cls"); SetColor(13, 0);
 			cout << "------------------------------------------------" << endl; SetColor(11, 0);
-			cout << "        Äîáðî ïîæàëîâàòü â ñèñòåìó              " << endl;
-			cout << "          ðåæèì Àäìèíà èìÿ  ";
+			cout << "        Ð”Ð¾Ð±Ñ€Ð¾ Ð¿Ð¾Ð¶Ð°Ð»Ð¾Ð²Ð°Ñ‚ÑŒ Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ              " << endl;
+			cout << "          Ñ€ÐµÐ¶Ð¸Ð¼ ÐÐ´Ð¼Ð¸Ð½Ð° Ð¸Ð¼Ñ  ";
 			SetColor(10, 0);
 			cout << admin.getFIO() << endl;
 			SetColor(13, 0);
-			cout << " Ñòàòèñòèêà" << endl;
+			cout << " Ð¡Ñ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ°" << endl;
 			cout << "------------------------------------------------" << endl;
-			cout << "1: "; SetColor(11, 0); cout << "Ðåçóëüòàòû òåñòèðîâàíèÿ âñåõ ñòóäåíòîâ" << endl; SetColor(13, 0);
-			cout << "2: "; SetColor(11, 0); cout << "Âûáðàòü êàòåãîðèþ / òåñò" << endl; SetColor(13, 0);
-			cout << "3: "; SetColor(11, 0); cout << "Âûáðàòü ñòóäåíòà" << endl; SetColor(13, 0);
-			cout << "0: "; SetColor(11, 0); cout << "Âûõîä" << endl; SetColor(11, 0);
+			cout << "1: "; SetColor(11, 0); cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñ‹ Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ Ð²ÑÐµÑ… ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð¾Ð²" << endl; SetColor(13, 0);
+			cout << "2: "; SetColor(11, 0); cout << "Ð’Ñ‹Ð±Ñ€Ð°Ñ‚ÑŒ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸ÑŽ / Ñ‚ÐµÑÑ‚" << endl; SetColor(13, 0);
+			cout << "3: "; SetColor(11, 0); cout << "Ð’Ñ‹Ð±Ñ€Ð°Ñ‚ÑŒ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°" << endl; SetColor(13, 0);
+			cout << "0: "; SetColor(11, 0); cout << "Ð’Ñ‹Ñ…Ð¾Ð´" << endl; SetColor(11, 0);
 			char vibor = getValue03();
 			switch (vibor)
 			{
@@ -424,12 +424,12 @@ public:
 	{
 		system("cls"); SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "        Äîáðî ïîæàëîâàòü â ñèñòåìó              " << endl;
-		cout << "          ðåæèì Àäìèíà èìÿ  ";
+		cout << "        Ð”Ð¾Ð±Ñ€Ð¾ Ð¿Ð¾Ð¶Ð°Ð»Ð¾Ð²Ð°Ñ‚ÑŒ Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ              " << endl;
+		cout << "          Ñ€ÐµÐ¶Ð¸Ð¼ ÐÐ´Ð¼Ð¸Ð½Ð° Ð¸Ð¼Ñ  ";
 		SetColor(10, 0);
 		cout << admin.getFIO() << endl;
 		SetColor(11, 0);
-		cout << "        Îáùèå ðåçóëüòàòû òåñòèðîâàíèÿ           " << endl; SetColor(13, 0);
+		cout << "        ÐžÐ±Ñ‰Ð¸Ðµ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñ‹ Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ           " << endl; SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
 		int kolT = 0;
 		for (auto& x : stud)
@@ -443,30 +443,30 @@ public:
 				x.second.printTestResultStat(cout);
 			}
 		}
-		else cout << "Íè îäèí ñòóäåíò òåñòèðîâàíèå íå ïðîøåë" << endl;
+		else cout << "ÐÐ¸ Ð¾Ð´Ð¸Ð½ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚ Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð½Ðµ Ð¿Ñ€Ð¾ÑˆÐµÐ»" << endl;
 		cout << endl << endl;
-		cout << "Ñîõðàíèòü â ôàéë? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "äà "; SetColor(13, 0); cout << " | 2 : "; SetColor(11, 0); cout << "íåò" << endl;
+		cout << "Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð² Ñ„Ð°Ð¹Ð»? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "Ð´Ð° "; SetColor(13, 0); cout << " | 2 : "; SetColor(11, 0); cout << "Ð½ÐµÑ‚" << endl;
 		char vibor = getValue02();
 		if (vibor == '1')
 		{
 			cin.ignore();
 			string namef;
 			do {
-				cout << "Ââåäèòå èìÿ ôàéëà: ";
+				cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°: ";
 				getline(cin, namef);
 				if (namef == "test.txt" || namef == "user.txt")
-					cout << "Ýòî èìÿ çàíÿòî, âûáåðèòå äðóãîå èìÿ ôàéëà" << endl;
+					cout << "Ð­Ñ‚Ð¾ Ð¸Ð¼Ñ Ð·Ð°Ð½ÑÑ‚Ð¾, Ð²Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´Ñ€ÑƒÐ³Ð¾Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°" << endl;
 			} while (namef == "test.txt" || namef == "user.txt");
 			ofstream fout(namef); SetColor(13, 0);
 			fout << "------------------------------------------------" << endl; SetColor(11, 0);
-			fout << "          Îáùèå ðåçóëüòàòû òåñòèðîâàíèÿ         " << endl; SetColor(13, 0);
+			fout << "          ÐžÐ±Ñ‰Ð¸Ðµ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñ‹ Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ         " << endl; SetColor(13, 0);
 			fout << "------------------------------------------------" << endl; SetColor(11, 0);
 			for (auto& x : stud)
 			{
 				x.second.printTestResultStat(fout);
 			}
 			fout.close();
-			cout << "Äàííûå ñîõðàíåíû â óêàçàííûé ôàéë" << endl;
+			cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹ Ð² ÑƒÐºÐ°Ð·Ð°Ð½Ð½Ñ‹Ð¹ Ñ„Ð°Ð¹Ð»" << endl;
 			system("pause");
 		}
 	}
@@ -475,12 +475,12 @@ public:
 		system("cls");
 		SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "        Äîáðî ïîæàëîâàòü â ñèñòåìó              " << endl;
-		cout << "          ðåæèì Àäìèíà èìÿ  ";
+		cout << "        Ð”Ð¾Ð±Ñ€Ð¾ Ð¿Ð¾Ð¶Ð°Ð»Ð¾Ð²Ð°Ñ‚ÑŒ Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ              " << endl;
+		cout << "          Ñ€ÐµÐ¶Ð¸Ð¼ ÐÐ´Ð¼Ð¸Ð½Ð° Ð¸Ð¼Ñ  ";
 		SetColor(10, 0);
 		cout << admin.getFIO() << endl;
 		SetColor(11, 0);
-		cout << "      Ðåçóëüòàòû òåñòèðîâàíèÿ ïî êàòåãîðèÿì     " << endl; SetColor(13, 0);
+		cout << "      Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñ‹ Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ Ð¿Ð¾ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸ÑÐ¼     " << endl; SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
 		int kolT = 0;
 		for (auto& x : stud)
@@ -490,14 +490,14 @@ public:
 		if (kolT)
 		{
 			t.printCategoryWithoutArc();
-			cout << "Âûáåðèòå íîìåð êàòåãîðèè:" << endl;
+			cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¸:" << endl;
 			int nomCat = getValue() - 48;
 			if (nomCat > 0 && nomCat <= t.getSize())
 			{
 				string nameCat = t.getNameCatStat(nomCat);
 				if (t.getKolTestCat(nameCat))
 				{
-					cout << "Êàòåãîðèÿ " << nameCat << " ñîäåðæèò òåñòû: " << endl;
+					cout << "ÐšÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ " << nameCat << " ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ Ñ‚ÐµÑÑ‚Ñ‹: " << endl;
 					t.printNameTestStat(nameCat);
 					if (t.getKolTestCat(nameCat) == 1)
 					{
@@ -505,85 +505,85 @@ public:
 						system("cls");
 						printStat(cout, nameCat, nameTest);
 						cout << endl << endl;
-						cout << "Ñîõðàíèòü â ôàéë? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "äà "; SetColor(13, 0); cout << " | 2 : "; SetColor(11, 0); cout << "íåò" << endl;
+						cout << "Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð² Ñ„Ð°Ð¹Ð»? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "Ð´Ð° "; SetColor(13, 0); cout << " | 2 : "; SetColor(11, 0); cout << "Ð½ÐµÑ‚" << endl;
 						char vibor = getValue02();
 						if (vibor == '1')
 						{
 							string namef;
 							do {
-								cout << "Ââåäèòå èìÿ ôàéëà: ";
+								cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°: ";
 								cin.ignore();
 								getline(cin, namef);
 								if (namef == "test.txt" || namef == "user.txt")
-									cout << "Ýòî çàðåçåðâèðîâàííîå èìÿ, âûáåðèòå äðóãîå èìÿ ôàéëà" << endl;
+									cout << "Ð­Ñ‚Ð¾ Ð·Ð°Ñ€ÐµÐ·ÐµÑ€Ð²Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð¾Ðµ Ð¸Ð¼Ñ, Ð²Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´Ñ€ÑƒÐ³Ð¾Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°" << endl;
 							} while (namef == "test.txt" || namef == "user.txt");
 							ofstream fout(namef);
 							printStat(fout, nameCat, nameTest);
 							fout.close();
-							cout << "Äàííûå ñîõðàíåíû â óêàçàííûé ôàéë" << endl;
+							cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹ Ð² ÑƒÐºÐ°Ð·Ð°Ð½Ð½Ñ‹Ð¹ Ñ„Ð°Ð¹Ð»" << endl;
 						}
 					}
 					else {
 						SetColor(13, 0);
-						cout << "1: "; SetColor(11, 0); cout << "ñòàòèñòèêà ïî âñåé êàòåãîðèè, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << " âûáðàòü òåñò" << endl;
+						cout << "1: "; SetColor(11, 0); cout << "ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ° Ð¿Ð¾ Ð²ÑÐµÐ¹ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¸, "; SetColor(13, 0); cout << "2: "; SetColor(11, 0); cout << " Ð²Ñ‹Ð±Ñ€Ð°Ñ‚ÑŒ Ñ‚ÐµÑÑ‚" << endl;
 						char vibor = getValue02();
 						if (vibor == '1')
 						{
 							for (int i = 0; i < t.getKolTestCat(nameCat); i++)
 								printStat(cout, nameCat, t.getNameTest(nameCat, i));
 							cout << endl << endl;
-							cout << "Ñîõðàíèòü â ôàéë? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "äà "; SetColor(13, 0); cout << " | 2 : "; SetColor(11, 0); cout << "íåò" << endl;
+							cout << "Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð² Ñ„Ð°Ð¹Ð»? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "Ð´Ð° "; SetColor(13, 0); cout << " | 2 : "; SetColor(11, 0); cout << "Ð½ÐµÑ‚" << endl;
 							char vibor = getValue02();
 							if (vibor == '1')
 							{
 								string namef;
 								do {
-									cout << "Ââåäèòå èìÿ ôàéëà: ";
+									cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°: ";
 									getline(cin, namef);
 									if (namef == "test.txt" || namef == "user.txt")
-										cout << "Ýòî èìÿ çàíÿòî, âûáåðèòå äðóãîå èìÿ ôàéëà" << endl;
+										cout << "Ð­Ñ‚Ð¾ Ð¸Ð¼Ñ Ð·Ð°Ð½ÑÑ‚Ð¾, Ð²Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´Ñ€ÑƒÐ³Ð¾Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°" << endl;
 								} while (namef == "test.txt" || namef == "user.txt");
 								ofstream fout(namef);
 								for (int i = 0; i < t.getKolTestCat(nameCat); i++)
 									printStat(fout, nameCat, t.getNameTest(nameCat, i));
 								fout.close();
-								cout << "Äàííûå ñîõðàíåíû" << endl;
+								cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹" << endl;
 							}
 						}
 						else {
-							cout << "Âûáåðèòå íîìåð òåñòà" << endl;
+							cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ‚ÐµÑÑ‚Ð°" << endl;
 							int nomTest = getValue() - 48;
 							if (nomTest > 0 && nomTest <= t.getKolTestCat(nameCat))
 							{
 								string nameTest = t.getNameTest(nameCat, nomTest - 1);
 								printStat(cout, nameCat, nameTest);
 								cout << endl << endl;
-								cout << "Ñîõðàíèòü â ôàéë? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "äà "; SetColor(13, 0); cout << " | 2 : "; SetColor(11, 0); cout << "íåò" << endl;
+								cout << "Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð² Ñ„Ð°Ð¹Ð»? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "Ð´Ð° "; SetColor(13, 0); cout << " | 2 : "; SetColor(11, 0); cout << "Ð½ÐµÑ‚" << endl;
 								char vibor = getValue02();
 								if (vibor == '1')
 								{
 									string namef;
 									do {
-										cout << "Ââåäèòå èìÿ ôàéëà: ";
+										cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°: ";
 										getline(cin, namef);
 										if (namef == "test.txt" || namef == "user.txt")
-											cout << "Ýòî èìÿ çàíÿòî, âûáåðèòå äðóãîå èìÿ ôàéëà" << endl;
+											cout << "Ð­Ñ‚Ð¾ Ð¸Ð¼Ñ Ð·Ð°Ð½ÑÑ‚Ð¾, Ð²Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´Ñ€ÑƒÐ³Ð¾Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°" << endl;
 									} while (namef == "test.txt" || namef == "user.txt");
 									ofstream fout(namef);
 									printStat(fout, nameCat, nameTest);
 									fout.close();
-									cout << "Äàííûå ñîõðàíåíû â óêàçàííûé ôàéë" << endl;
+									cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹ Ð² ÑƒÐºÐ°Ð·Ð°Ð½Ð½Ñ‹Ð¹ Ñ„Ð°Ð¹Ð»" << endl;
 								}
 							}
-							else cout << "Íåâåðíûé íîìåð òåñòà" << endl;
+							else cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€ Ñ‚ÐµÑÑ‚Ð°" << endl;
 						}
 					}
 				}
-				else cout << "Äàííàÿ êàòåãîðèÿ íå ñîäåðæèò íè îäíîãî òåñòà" << endl;
+				else cout << "Ð”Ð°Ð½Ð½Ð°Ñ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ Ð½Ðµ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ Ð½Ð¸ Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ñ‚ÐµÑÑ‚Ð°" << endl;
 			}
-			else cout << "Íåâåðíûé íîìåð êàòåãîðèè" << endl;
+			else cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¸" << endl;
 		}
-		else cout << "Íè îäèí ñòóäåíò òåñòèðîâàíèå íå ïðîøåë" << endl;
+		else cout << "ÐÐ¸ Ð¾Ð´Ð¸Ð½ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚ Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð½Ðµ Ð¿Ñ€Ð¾ÑˆÐµÐ»" << endl;
 		system("pause");
 	}
 	void printStatStud()
@@ -591,18 +591,18 @@ public:
 		system("cls");
 		SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "        Äîáðî ïîæàëîâàòü â ñèñòåìó              " << endl;
-		cout << "          ðåæèì Àäìèíà èìÿ  ";
+		cout << "        Ð”Ð¾Ð±Ñ€Ð¾ Ð¿Ð¾Ð¶Ð°Ð»Ð¾Ð²Ð°Ñ‚ÑŒ Ð² ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ              " << endl;
+		cout << "          Ñ€ÐµÐ¶Ð¸Ð¼ ÐÐ´Ð¼Ð¸Ð½Ð° Ð¸Ð¼Ñ  ";
 		SetColor(10, 0);
 		cout << admin.getFIO() << endl;
 		SetColor(11, 0);
-		cout << "        Ðåçóëüòàòû òåñòèðîâàíèÿ ñòóäåíòà        " << endl; SetColor(13, 0);
+		cout << "        Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñ‹ Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°        " << endl; SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
 		int n = 1;
 		for (auto& x : stud)
 			cout << setw(3) << n++ << ". " << x.second.getFIO() << endl; SetColor(13, 0);
 		cout << "------------------------------------------------" << endl; SetColor(11, 0);
-		cout << "Âûáåðèòå íîìåð ñòóäåíòà: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ ÑÑ‚ÑƒÐ´ÐµÐ½Ñ‚Ð°: ";
 		int nomSt;
 		cin >> nomSt;
 		cin.ignore();
@@ -612,26 +612,26 @@ public:
 			advance(it, nomSt - 1);
 			it->second.printTResult(cout);
 			cout << endl << endl;
-			cout << "Ñîõðàíèòü â ôàéë? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "äà "; SetColor(13, 0); cout << " | 2 : "; SetColor(11, 0); cout << "íåò" << endl;
+			cout << "Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð² Ñ„Ð°Ð¹Ð»? "; SetColor(13, 0); cout << "1: "; SetColor(11, 0); cout << "Ð´Ð° "; SetColor(13, 0); cout << " | 2 : "; SetColor(11, 0); cout << "Ð½ÐµÑ‚" << endl;
 			char vibor = getValue02();
 			if (vibor == '1')
 			{
 				string namef;
 				do {
-					cout << "Ââåäèòå èìÿ ôàéëà: ";
+					cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°: ";
 					getline(cin, namef);
 					if (namef == "test.txt" || namef == "user.txt")
-						cout << "Ýòî èìÿ çàíÿòî, âûáåðèòå äðóãîå èìÿ ôàéëà" << endl;
+						cout << "Ð­Ñ‚Ð¾ Ð¸Ð¼Ñ Ð·Ð°Ð½ÑÑ‚Ð¾, Ð²Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´Ñ€ÑƒÐ³Ð¾Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð°" << endl;
 				} while (namef == "test.txt" || namef == "user.txt");
 				ofstream fout(namef);
 				it->second.printTResult(fout);
 				fout.close();
-				cout << "Äàííûå ñîõðàíåíû â óêàçàííûé ôàéë" << endl;
+				cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹ Ð² ÑƒÐºÐ°Ð·Ð°Ð½Ð½Ñ‹Ð¹ Ñ„Ð°Ð¹Ð»" << endl;
 				system("pause");
 			}
 		}
 		else {
-			cout << "Íåâåðíûé íîìåð" << endl;
+			cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€" << endl;
 			system("pause");
 		}
 	}
@@ -639,7 +639,7 @@ public:
 	{
 		SetColor(13, 0);
 		out << "------------------------------------------------" << endl; SetColor(11, 0);
-		out << "       Ðåçóëüòàòû òåñòèðîâàíèÿ: òåñò            " << nameTest << " èç êàòåãîðèè:" << nameCat << endl; SetColor(13, 0);
+		out << "       Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñ‹ Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ: Ñ‚ÐµÑÑ‚            " << nameTest << " Ð¸Ð· ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¸:" << nameCat << endl; SetColor(13, 0);
 		out << "------------------------------------------------" << endl;
 		for (auto& x : stud)
 		{
@@ -650,7 +650,7 @@ public:
 			}
 		};
 		out << "------------------------------------------------" << endl; SetColor(11, 0);
-		out << "             Íåçàâåðøåííûå òåñòû  :             " << endl; SetColor(13, 0);
+		out << "             ÐÐµÐ·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð½Ñ‹Ðµ Ñ‚ÐµÑÑ‚Ñ‹  :             " << endl; SetColor(13, 0);
 		out << "------------------------------------------------" << endl;
 		for (auto& x : stud)
 		{

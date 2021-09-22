@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include<string>
 #include<map>
 #include<iostream>
@@ -72,18 +72,18 @@ public:
 
 		do {
 			SetColor(11, 0);
-			cout << "Ïàðîëü: ";
+			cout << "ÐŸÐ°Ñ€Ð¾Ð»ÑŒ: ";
 			getline(in, pas);
 			if (!pas.length() || isSymbol(pas, ' '))
-				cout << "Ïàðîëü äîëæåí ñîäåðæàòü ëþáûå ñèìâîëû, êðîìå ïðîáåëà" << endl;
+				cout << "ÐŸÐ°Ñ€Ð¾Ð»ÑŒ Ð´Ð¾Ð»Ð¶ÐµÐ½ ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ñ‚ÑŒ Ð»ÑŽÐ±Ñ‹Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ‹, ÐºÑ€Ð¾Ð¼Ðµ Ð¿Ñ€Ð¾Ð±ÐµÐ»Ð°" << endl;
 		} while (isSymbol(pas, ' '));
-		cout << "Ôàìèëèÿ, èìÿ, îò÷åñòâî: ";
+		cout << "Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ, Ð¸Ð¼Ñ, Ð¾Ñ‚Ñ‡ÐµÑÑ‚Ð²Ð¾: ";
 		getline(in, fio);
 		do {
 			cout << "e-mail: ";
 			getline(in, em);
 			if (!isSymbol(em, '@'))
-				cout << "e-mail äîëæåí èìåòü âèä name@service" << endl;
+				cout << "e-mail Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð¸Ð¼ÐµÑ‚ÑŒ Ð²Ð¸Ð´ name@service" << endl;
 		} while (!isSymbol(em, '@'));
 		hash<string> encrypt;
 		us.password = to_string(encrypt(pas));
@@ -154,8 +154,8 @@ public:
 	void print(ostream& out)
 	{
 		SetColor(11, 0);
-		out << name << " Êàòåãîðèÿ: " << category << "  Îöåíêà: " << mark << endl;
-		out << "Ïðàâèëüíûõ îòâåòîâ: " << kolPOt << "  "<< procPOt << " %   Êîëè÷åñòâî íàáðàííûõ áàëëîâ: " << bal << endl;
+		out << name << " ÐšÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ: " << category << "  ÐžÑ†ÐµÐ½ÐºÐ°: " << mark << endl;
+		out << "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ñ… Ð¾Ñ‚Ð²ÐµÑ‚Ð¾Ð²: " << kolPOt << "  "<< procPOt << " %   ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð½Ð°Ð±Ñ€Ð°Ð½Ð½Ñ‹Ñ… Ð±Ð°Ð»Ð»Ð¾Ð²: " << bal << endl;
 	}
 	string getName() { return name; }
 	string getCategory() { return category; }
@@ -214,8 +214,8 @@ public:
 	void print(ostream& out)
 	{
 		SetColor(11, 0);
-		out << name << " Êàòåãîðèÿ: " << category << "  Êîëè÷åñòâî ïðîéäåííûõ âîïðîñîâ: " << kolQFinished << endl;
-		out << "Ïðàâèëüíûõ îòâåòîâ: " << kolPOt << "  " << procPOt << " %   Êîëè÷åñòâî íàáðàííûõ áàëëîâ: " << bal << endl;
+		out << name << " ÐšÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ: " << category << "  ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿Ñ€Ð¾Ð¹Ð´ÐµÐ½Ð½Ñ‹Ñ… Ð²Ð¾Ð¿Ñ€Ð¾ÑÐ¾Ð²: " << kolQFinished << endl;
+		out << "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ñ… Ð¾Ñ‚Ð²ÐµÑ‚Ð¾Ð²: " << kolPOt << "  " << procPOt << " %   ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð½Ð°Ð±Ñ€Ð°Ð½Ð½Ñ‹Ñ… Ð±Ð°Ð»Ð»Ð¾Ð²: " << bal << endl;
 	}
 	int getKolQFinished() { return kolQFinished; }
 };
@@ -283,7 +283,7 @@ public:
 	{
 		SetColor(13, 0);
 		out << "------------------------------------------------" << endl; SetColor(11, 0);
-		out << "      Ðåçóëüòàòû òåñòèðîâàíèÿ: "; SetColor(10, 0);out << fio << endl; SetColor(13, 0);
+		out << "      Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñ‹ Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ: "; SetColor(10, 0);out << fio << endl; SetColor(13, 0);
 		out << "------------------------------------------------" << endl; SetColor(11, 0);
 		if (testFinished.size())
 		{
@@ -298,10 +298,10 @@ public:
 		}
 		else {
 			SetColor(11, 0);
-			out << "          íåò ïðîéäåííûõ òåñòîâ                 " << endl; SetColor(13, 0);
+			out << "          Ð½ÐµÑ‚ Ð¿Ñ€Ð¾Ð¹Ð´ÐµÐ½Ð½Ñ‹Ñ… Ñ‚ÐµÑÑ‚Ð¾Ð²                 " << endl; SetColor(13, 0);
 			out << "------------------------------------------------" << endl; SetColor(11, 0);
 		}
-		out << "          Íåçàâåðøåííûå òåñòû:                  " << endl; SetColor(13, 0);
+		out << "          ÐÐµÐ·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð½Ñ‹Ðµ Ñ‚ÐµÑÑ‚Ñ‹:                  " << endl; SetColor(13, 0);
 		out << "------------------------------------------------" << endl; SetColor(11, 0);
 		if (testUnFinished.size())
 		{
@@ -317,7 +317,7 @@ public:
 		}
 		else {
 			SetColor(11, 0);
-			out << "          íåò íåçàâåðøåííûõ òåñòîâ             " << endl; SetColor(13, 0);
+			out << "          Ð½ÐµÑ‚ Ð½ÐµÐ·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð½Ñ‹Ñ… Ñ‚ÐµÑÑ‚Ð¾Ð²             " << endl; SetColor(13, 0);
 			out << "------------------------------------------------" << endl; SetColor(11, 0);
 		}
 	}
@@ -327,7 +327,7 @@ public:
 		{
 			SetColor(13, 0);
 			out << "------------------------------------------------" << endl; SetColor(11, 0);
-			out << "       Ðåçóëüòàòû òåñòèðîâàíèÿ:                 " << fio << endl; SetColor(13, 0);
+			out << "       Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñ‹ Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ:                 " << fio << endl; SetColor(13, 0);
 			out << "------------------------------------------------" << endl; SetColor(11, 0);
 			if (testFinished.size())
 			{
@@ -343,7 +343,7 @@ public:
 			if (testUnFinished.size())
 			{
 				SetColor(11, 0);
-				out << "              Íåçàâåðøåííûå òåñòû:              " << endl; SetColor(13, 0);
+				out << "              ÐÐµÐ·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð½Ñ‹Ðµ Ñ‚ÐµÑÑ‚Ñ‹:              " << endl; SetColor(13, 0);
 				out << "------------------------------------------------" << endl; SetColor(11, 0);
 				int nom = 1;
 				SetColor(13, 0);
@@ -391,8 +391,8 @@ public:
 		SetColor(11, 0);
 		for (auto& x : testFinished)
 			if (x.getName() == nameTest && x.getCategory() == nameCat)
-				out << fio << "  Îöåíêà: " << x.getMark() << "   Ïðàâèëüíûõ îòâåòîâ: " << x.getPer()
-				<< " %" << "Êîëè÷åñòâî íàáðàííûõ áàëëîâ: " << x.getBalTest() << endl;
+				out << fio << "  ÐžÑ†ÐµÐ½ÐºÐ°: " << x.getMark() << "   ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ñ… Ð¾Ñ‚Ð²ÐµÑ‚Ð¾Ð²: " << x.getPer()
+				<< " %" << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð½Ð°Ð±Ñ€Ð°Ð½Ð½Ñ‹Ñ… Ð±Ð°Ð»Ð»Ð¾Ð²: " << x.getBalTest() << endl;
 	}
 
 	void printStatTUF(ostream& out, string nameCat, string nameTest)
@@ -400,7 +400,7 @@ public:
 		SetColor(11, 0);
 		for (auto& x : testUnFinished)
 			if (x.getName() == nameTest && x.getCategory() == nameCat)
-				out << fio << "  Êîëè÷åñòâî ïðîéäåííûõ âîïðîñîâ: " << x.getKolQFinished() << "   Ïðàâèëüíûõ îòâåòîâ: " << x.getPer()
-				<< " %" << "Êîëè÷åñòâî íàáðàííûõ áàëëîâ: " << x.getBalTest() << endl;
+				out << fio << "  ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿Ñ€Ð¾Ð¹Ð´ÐµÐ½Ð½Ñ‹Ñ… Ð²Ð¾Ð¿Ñ€Ð¾ÑÐ¾Ð²: " << x.getKolQFinished() << "   ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ñ… Ð¾Ñ‚Ð²ÐµÑ‚Ð¾Ð²: " << x.getPer()
+				<< " %" << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð½Ð°Ð±Ñ€Ð°Ð½Ð½Ñ‹Ñ… Ð±Ð°Ð»Ð»Ð¾Ð²: " << x.getBalTest() << endl;
 	}
 };
