@@ -247,9 +247,9 @@ class Test
 
 public:
 	Test() {};
-	Test(string name, string category, string comment, bool active, int bal, bool unfinished)
+	Test(string name, string category, bool active, int bal, bool unfinished)
 	{
-		Name = name;
+		name = name;
 		Category = category;
 		Active = active;
 		Bal = bal;
