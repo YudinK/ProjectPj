@@ -692,14 +692,12 @@ public:
 			SetColor(13, 0);
 			cout << "1: "; SetColor(11, 0); cout << "работа с тестами " << endl; SetColor(13, 0);
 			cout << "2: "; SetColor(11, 0); cout << "сохранить" << endl; SetColor(13, 0);
-			cout << "3: "; SetColor(11, 0); cout << "загрузить" << endl; SetColor(13, 0);
 			cout << "0: "; SetColor(11, 0); cout << "выход" << endl; SetColor(11, 0);
 			char vibor = getValue();
 			switch (vibor)
 			{
 			case '1': workTest(); break;
 			case '2': save(); break;
-			//case '3': load(); system("pause"); break;
 			case '0': exit(0); break;
 			default: break;
 			}
