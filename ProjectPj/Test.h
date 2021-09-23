@@ -636,17 +636,16 @@ public:
 			for (int i = 0; i < k; i++)
 			{
 				int bal, kolQ;
-				string name, category, comment;
+				string name, category;
 				bool active, unfinished;
 				getline(fin, name);
-				getline(fin, category);
-				getline(fin, comment);
+				getline(fin, category);				
 				fin >> active;
 				fin >> bal;
 				fin >> unfinished;
 				fin >> kolQ;
 				fin.get();
-				Test t(name, category, comment, active, bal, unfinished);
+				Test t(name, category, active, bal, unfinished);
 				list<Quest> lq;
 				for (int i = 0; i < kolQ; i++)
 				{
